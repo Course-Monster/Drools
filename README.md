@@ -175,38 +175,6 @@ _"Mastering Drools 8"_ is an intensive 3-day program focused on equipping partic
 - **Assessment: Project Update and Evaluation**
 
 ---
-# 💲 Pricing for Drools 8 Training Course
-
-## 💎 Standard Pricing
-
-- **Individual Rate:** $1200 - $1500 per participant
-    - Includes comprehensive course materials, hands-on lab sessions, and post-course support.
-
-## 🤝 Special Discounts
-
-- **Group Discount:** 15-20% off for groups of 5 or more
-    - Encourages corporate or team enrollments, fostering collaborative learning.
-- **Early Bird Registration:** 10-15% off for registrations made at least 45 days prior
-    - Incentivizes early commitments and assists in logistical planning.
-- **Student Discount:** 25-30% off for currently enrolled students and recent graduates
-    - Offers affordability to those in academia or early career stages.
-
-## 💼 Corporate Packages
-
-- **Corporate Rate:** Custom pricing for corporate clients
-    - Tailored packages for businesses, including company-specific content, extended support, and on-site training options.
-
-## 📝 Additional Value-Added Services
-
-- **Post-Training Consultation:** Available at an additional fee
-    - Ongoing support and consultation post-training for real-world project implementation.
-
-## 🗣️ Premium Add-Ons
-
-- **One-on-One Coaching Sessions:** Additional charge per hour
-    - Personalized coaching for deeper understanding and specific case solutions.
-
----
 # 🧪 Course Setup Guide: Drools 8 Lab Environment
 
 #### Overview
