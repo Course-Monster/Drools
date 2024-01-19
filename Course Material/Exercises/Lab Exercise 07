@@ -32,6 +32,7 @@ Convert the theoretical business rules created in the Lab Exercise 01 into struc
 - Theoretical Rule: "If a customer purchases items worth more than 100, then apply a 10% discount."
 - DRL Format:
 
+```
         **rule** **"**Discount on Large Purchases"
 
         **when**
@@ -44,6 +45,7 @@ Convert the theoretical business rules created in the Lab Exercise 01 into struc
 
                System.out.println("A discount of 10% is applied for purchases over 100.");
 
+```
 **end**
 
 5. **Document Your Rules:** Create a document listing all your transformed rules. Clearly outline the Rule Name, LHS, RHS, and any assumptions or explanations needed.
