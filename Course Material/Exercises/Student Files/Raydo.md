@@ -59,6 +59,7 @@ This exercise highlights the practical application of Drools in addressing real-
 This solution is in response to "Exercise 01 – Module 01 Practical Task," demonstrating the practical application of Drools in addressing real-world operational challenges within a university's course registration process.
 
   
+  
 # Implementing Drools Rules for University Course Registration Efficiency
 
 ## Objective
@@ -97,9 +98,11 @@ This task offers practical experience in converting theoretical rules into funct
 
 ---
 
-Delegates are expected to implement the Drools rules based on the provided theoretical rules and document their code and reasoning for each rule. This hands-on exercise will help them understand how to apply Drools effectively in a university course registration context.
+> [!NOTE]
+> Delegates are expected to implement the Drools rules based on the provided theoretical rules and document their code and reasoning for each rule. This hands-on exercise will help them understand how to apply Drools effectively in a university course registration context.
 
 ---
+
 
 Here are hints and an actual example for implementing Drools rules along with code samples in Java. These examples cover a simplified scenario of course registration, focusing on the "Course Availability Rules."
 
@@ -145,9 +148,11 @@ In this Java example, we define the "Course Capacity Rule" using Drools syntax. 
 
 ---
 
-Delegates should follow a similar approach to implement the remaining rules, adapt them to their specific use case, and test their behavior using sample data.
+> [!NOTE]
+> Delegates should follow a similar approach to implement the remaining rules, adapt them to their specific use case, and test their behavior using sample data.
 
 ---
+
 
 Let's make the code more complex by adding additional conditions and actions to the Drools rules. In this example, we'll expand on the "Course Capacity Rule" and introduce a new rule, the "Priority Registration Rule."
 
@@ -176,6 +181,7 @@ In this more complex example, we have two rules:
 
 ---
 
-Delegates can use this example as a reference to create more complex Drools rules, adding multiple conditions and actions as needed to address specific challenges in their university course registration system.
+> [!NOTE]
+> Delegates can use this example as a reference to create more complex Drools rules, adding multiple conditions and actions as needed to address specific challenges in their university course registration system.
 
 ---
