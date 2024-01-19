@@ -1,10 +1,10 @@
-# Drools Course by Course Monster Partner - Skunkworks (Pty) Ltd
+# Drools Course by Course Monster's Partner - Skunkworks (Pty) Ltd
 
 ![Drools (1)](https://github.com/Course-Monster/Drools/assets/126121348/ec92e625-2817-4ca5-8088-3007bef9024f)
 
 Welcome to the Drools course repository, brought to you by Course Monster Partner, Skunkworks (Pty) Ltd. 
 
-📅 **Course Dates**:
+## 📅 **Course Dates**:
 - January 19, 2024
 - January 26, 2024
 - February 2, 2024
