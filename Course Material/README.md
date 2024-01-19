@@ -9,7 +9,6 @@ Welcome to the Drools course repository, brought to you by Course Monster Partne
 - January 26, 2024
 - February 2, 2024
 
-![Calendar Icon](https://example.com/calendar-icon.png) <!-- You can replace this with an actual calendar icon -->
 
 This repository contains all the resources and materials you need to master Drools for effective rule-based decision making.
 
