@@ -1,12 +1,6 @@
 # 📘 Course Outline
 
-## 💡 Course Title Options
-
-1. **Drools Mastery: From Basics to AI Integration**
-2. **Rule the Rules: A Comprehensive Drools Bootcamp**
-3. **Drools Deep Dive: Expertise in Decision Automation**
-4. **Dynamic Decision Making: A Journey through Drools**
-5. **Art of Rule Engines: Mastering Drools in the AI Era**
+![Drools (1)](https://github.com/Course-Monster/Drools/assets/126121348/9354596f-4af0-4183-9039-8bb31a5bae6d)
 
 ---
 ## **🌟 Mastering Drools 8: Comprehensive Training Course**
