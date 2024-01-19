@@ -1,6 +1,6 @@
 # Drools Course by Course Monster Partner - Skunkworks (Pty) Ltd
 
-![Drools Course Banner](https://example.com/course-banner.png) <!-- You can replace this with an actual banner image -->
+![Drools (1)](https://github.com/Course-Monster/Drools/assets/126121348/ec92e625-2817-4ca5-8088-3007bef9024f)
 
 Welcome to the Drools course repository, brought to you by Course Monster Partner, Skunkworks (Pty) Ltd. 
 
