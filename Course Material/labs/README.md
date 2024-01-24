@@ -1,5 +1,33 @@
 # README.md for Drools Labs
 
+
+# **Folder for drools usecase lab**
+
+# Tech Stack
+- Docker
+- Drools
+- Spring Cloud
+- Spring Boot
+- PostgreSQL
+
+# Case 1 - Life Insurance
+ Rule "Checking Client Age for Elibility"
+  when age < 18
+  Then "Client is eligible for Life Insurance"
+  End
+
+Rule "Checking Amount of Life Insurance"
+when salary >= 18000 and salary <= 50000
+then life insurance amount = 1000000
+else
+when salary > 50000 and salary <= 100000
+then life insurance amount = 5000000
+else
+life insurance amount = 5000000
+# Case 2 - Loan Application
+# Case 3 - ????
+
+
 ## Comprehensive Guide for Drools Practical Scenarios
 
 Welcome to the Drools Labs repository! This guide is designed to provide you with hands-on experience in implementing Drools rules for various real-world scenarios.
@@ -179,3 +207,6 @@ This lab will deepen your understanding of applying business rules to complex fi
 This guide aims to provide a structured approach to exploring different aspects of Drools in practical scenarios. Enjoy the learning experience!
 
 [Continue to next part for more detailed instructions and expansion on each lab]
+
+
+
