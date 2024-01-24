@@ -28,6 +28,17 @@ life insurance amount = 5000000
 # Case 2 - Loan Application
 
 # Case 3 - ????
+
+
+> [!BOASTING]
+![th](https://github.com/Course-Monster/Drools/assets/126121348/4751eabb-12c6-40c9-a7e2-def23cee0408)
+
+> 
+> Raydo's got some skills. lol. Thanks ChatGPT 
+> 
+
+
+
 ## Comprehensive Guide for Practical Scenarios in Drools
 Welcome to the Drools Labs repository! This guide offers hands-on experience in implementing Drools rules across various real-world scenarios, providing you with practical insights and knowledge.
 
