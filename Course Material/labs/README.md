@@ -31,6 +31,7 @@ life insurance amount = 5000000
 
 
 <div style="page-break-after: always;"></div>
+
 ---
 
 > [!BOASTING]
@@ -41,6 +42,7 @@ life insurance amount = 5000000
 > 
 
 <div style="page-break-after: always;"></div>
+
 ---
 
 
