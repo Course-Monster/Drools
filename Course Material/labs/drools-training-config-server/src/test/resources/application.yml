@@ -1,0 +1,45 @@
+#==============================
+# 1. Server Configurations
+#==============================
+server:
+  port: 8888
+
+#==============================
+# 2. Repo Configurations
+#==============================
+spring:
+  application:
+    name: drools-training-config-server
+  profiles:
+    active: jdbc
+  datasource:
+    hikari:
+      connection-timeout: 5000
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://quankee-postgres:5432/drools?
+    username: drools
+    password: drools
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  cloud:
+    config:
+      server:
+        jdbc:
+          order: 0
+          sql: SELECT key, value FROM DROOLS_CONFIG.PROPERTIES WHERE application=? and profile=? and label=?
+        bootstrap: false
+        default-profile: native
+        default-label: latest
+        default-application-name: drools-training-config-server
+
+#==============================
+# 2. Eureka Configuration
+#==============================
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
