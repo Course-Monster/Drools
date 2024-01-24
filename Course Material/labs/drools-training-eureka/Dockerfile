@@ -8,14 +8,14 @@ FROM openjdk:17-alpine
 # install
 
 # label for the image
-LABEL Description="Eureka Server" Version="1.0.3-SNAPSHOT"
+LABEL Description="Drools Training Eureka Server" Version="1.0.0-SNAPSHOT"
 
 # the version of the archive
-ARG VERSION=1.0.3-SNAPSHOT
+ARG VERSION=1.0.0-SNAPSHOT
 
 # The port
-EXPOSE 8762
+EXPOSE 8761
 
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} quankee-engine-eureka-*.jar
-ENTRYPOINT ["java","-jar","/quankee-engine-eureka-*.jar"]
+ENTRYPOINT ["java","-jar","/drools-training-eureka-*.jar"]

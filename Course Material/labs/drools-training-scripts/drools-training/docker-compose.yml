@@ -1,0 +1,29 @@
+version: '3'
+services:
+#===========================
+# 1. Drools Training Eureka
+#===========================
+  quankee-engine-eureka:
+    image: drools-training/drools-training-eureka:1.0.0-SNAPSHOT
+    build: ../../drools-training-eureka
+    container_name: qdrools-training-eureka
+    ports:
+      - "8761:8761"
+    networks:
+      - drools-training
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://drools-training-eureka:8761/actuator/health || exit 1
+      interval: 10s
+      timeout: 30s
+
+#==========================
+# 2. Networks
+#==========================
+networks:
+  quankee-db:
+    name: drools-training-db
+    external: true
+  quankee-engine:
+    name: drools-training-eureka
+    external: true
+
