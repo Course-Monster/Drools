@@ -31,8 +31,9 @@ life insurance amount = 5000000
 
 
 > [!BOASTING]
-![th](https://github.com/Course-Monster/Drools/assets/126121348/4751eabb-12c6-40c9-a7e2-def23cee0408)
-
+> 
+>![th](https://github.com/Course-Monster/Drools/assets/126121348/4751eabb-12c6-40c9-a7e2-def23cee0408)
+>
 > 
 > Raydo's got some skills. lol. Thanks ChatGPT 
 > 
