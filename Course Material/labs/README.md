@@ -30,13 +30,18 @@ life insurance amount = 5000000
 # Case 3 - ????
 
 
+<div style="page-break-after: always;"></div>
+---
+
 > [!BOASTING]
 > 
->![th](https://github.com/Course-Monster/Drools/assets/126121348/4751eabb-12c6-40c9-a7e2-def23cee0408)
->
+> ![th](https://github.com/Course-Monster/Drools/assets/126121348/ef774475-4b22-4415-91ed-94c8c6f8bb3b)
 > 
 > Raydo's got some skills. lol. Thanks ChatGPT 
 > 
+
+<div style="page-break-after: always;"></div>
+---
 
 
 
