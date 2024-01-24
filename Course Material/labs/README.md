@@ -27,7 +27,7 @@ life insurance amount = 5000000
 
 # Case 2 - Loan Application
 
-# Case 3 - ????
+# Case 3 - Commodities and Futures Contracts Rules
 
 
 <div style="page-break-after: always;"></div>
