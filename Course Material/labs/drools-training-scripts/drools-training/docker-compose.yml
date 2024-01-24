@@ -6,7 +6,7 @@ services:
   quankee-engine-eureka:
     image: drools-training/drools-training-eureka:1.0.0-SNAPSHOT
     build: ../../drools-training-eureka
-    container_name: qdrools-training-eureka
+    container_name: drools-training-eureka
     ports:
       - "8761:8761"
     networks:
@@ -17,13 +17,33 @@ services:
       timeout: 30s
 
 #==========================
-# 2. Networks
+# 4. Engine Config Server
+#==========================
+  quankee-engine-config-server:
+    image: drools-training/drools-training-config-server:1.0.0-SNAPSHOT
+    build: ../../drools-training-config-server
+    container_name: drools-training-config-server
+    ports:
+      - "8888:8888"
+    networks:
+      - drools-training
+      - drools-training-db
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://drools-training-config-server:8888/actuator/health || exit 1
+      interval: 20s
+      timeout: 30s
+    depends_on:
+      quankee-engine-eureka:
+        condition: service_healthy
+
+#==========================
+# 3. Networks
 #==========================
 networks:
   quankee-db:
     name: drools-training-db
     external: true
   quankee-engine:
-    name: drools-training-eureka
+    name: drools-training
     external: true
 
