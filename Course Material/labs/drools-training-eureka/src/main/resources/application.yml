@@ -1,0 +1,37 @@
+#==============================
+# 1. Server Configurations
+#==============================
+server:
+  port: 8761
+
+#==============================
+# 2. Spring Applications
+#==============================
+spring:
+  application:
+    name: drools-training-eureka
+  profiles:
+    active: dev
+#==============================
+# 3. Eureka
+#==============================
+eureka:
+  instance:
+    hostname: localhost
+    secure-port:  ${server.port}
+    statusPageUrl: http://${eureka.instance.hostname}:${eureka.instance.secure-port}/info
+    healthCheckUrl: http://${eureka.instance.hostname}:${eureka.instance.secure-port}/health
+    homePageUrl: http://${eureka.instance.hostname}:${eureka.instance.secure-port}/
+    prefer-ip-address: true
+
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: https://${eureka.instance.hostname}:${eureka.instance.secure-port}/eureka/
+
+  server:
+    max-threads-for-peer-replication: 0
+    renewal-percent-threshold: 0.85
+    waitTimeInMsWhenSyncEmpty: 0
+
