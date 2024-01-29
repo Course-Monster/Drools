@@ -1,0 +1,14 @@
+#==============================
+# 1. Gateway Server Configurations
+#==============================
+server:
+  port: 8000
+
+#==============================
+# 2. Spring Applications
+#==============================
+spring:
+  application:
+    name: drools-training-gateway
+  profiles:
+    active: dev
