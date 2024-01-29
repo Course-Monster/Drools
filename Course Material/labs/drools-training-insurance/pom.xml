@@ -36,6 +36,7 @@
 
 	<!-- modules -->
 	<modules>
+		<module>drools-training-insurance-domain</module>
 		<module>drools-training-insurance-web</module>
 	</modules>
 
