@@ -1,0 +1,21 @@
+# Docker file for the Read Service
+#
+# Version 1.0.1-SNAPSHOT
+
+# Java 17 Image
+FROM openjdk:17-alpine
+
+# install
+
+# label for the image
+LABEL Description="Drools Training Config Server" Version="1.0.0-SNAPSHOT"
+
+# the version of the archive
+ARG VERSION=1.0.0-SNAPSHOT
+
+# The port
+EXPOSE 8888
+
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} drools-training-config-server-*.jar
+ENTRYPOINT ["java","-jar","/drools-training-config-server-*.jar"]

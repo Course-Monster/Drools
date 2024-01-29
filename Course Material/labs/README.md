@@ -1,6 +1,6 @@
 # **Folder for drools usecase lab**
 
-# Tech Stack
+# 1. Tech Stack
 - Java 17
 - 
 - Docker
@@ -9,16 +9,34 @@
 - Spring Boot
 - PostgreSQL
 
-# Instructions
-1. Install and Setup JDK 17
-2. Install and Setup Maven 2
-3. Install and Setup Docker
+# 2. Instructions
+2.1 Install and Setup JDK 17
+2.2 Install and Setup Maven 2
+2.3 Install and Setup Docker
 
 
-# Build and deploy
+# 3. Build and deploy
+# 3.1 Build each project
 - mvn clean install
 
-# Docker
+# 3.2 Run Eureka, Config Server and Gateway
+- mvn spring-boot:run
+
+
+
+# 4. Docker
+# 4.1 Drools Training 
+### Docker build ####
+# 4.2 Eureka
+docker build -t drools-training/drools-training-eureka:1.0.0-SNAPSHOT .
+docker image tag drools-training/drools-training-eureka:1.0.0-SNAPSHOT
+docker run -d --name drools-training-eureka --hostname drools-training-eureka -p 8761:8761 drools-training/drools-training-eureka:1.0.0-SNAPSHOT 
+
+# 4.3 Config Server
+docker build -t drools-training/drools-training-config-server:1.0.0-SNAPSHOT .
+docker image tag drools-training/drools-training-config-server:1.0.0-SNAPSHOT
+docker run -d --name drools-training-config-server --hostname drools-training-config-server -p 8888:8888 drools-training/drools-training-config-server:1.0.0-SNAPSHOT 
+
 
 # Install PostgreSql Docker image
 docker pull postgres
