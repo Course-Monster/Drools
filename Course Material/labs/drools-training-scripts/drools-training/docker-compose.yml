@@ -49,9 +49,22 @@ services:
     depends_on:
       drools-training-config-server:
         condition: service_healthy
-
-
-
+#=============================
+# 4. Drools Training Insurance
+#=============================
+  drools-training-insurance:
+    image: drools-training/drools-training-insurance:1.0.0-SNAPSHOT
+    build: ../../drools-training-insurance
+    container_name: drools-training-insurance
+    ports:
+      - "8001:8001"
+    networks:
+      - drools-training
+      - drools-training-db
+      - quankee-db
+    depends_on:
+      drools-training-config-server:
+        condition: service_healthy
 
 #==========================
 # 5. Networks

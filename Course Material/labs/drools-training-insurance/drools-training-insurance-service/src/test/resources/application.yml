@@ -1,0 +1,41 @@
+#==============================
+# 1. Server Configurations
+#==============================
+server:
+  port: 8001
+
+#==============================
+# 2. Spring Applications
+#==============================
+spring:
+  application:
+    name: drools-training-insurance
+  profiles:
+    active: dev
+
+#==============================
+# 3. Database Settings
+#==============================
+  datasource:
+    url: jdbc:h2:mem:DROOLS_TRAINING;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: h2h
+    password: h2h
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+#==============================
+# 4. Eureka Configuration
+#==============================
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: false
+    fetch-registry: false
+
+

@@ -1,0 +1,19 @@
+#==============================
+# 1. Server Configurations
+#==============================
+server:
+  port: 8001
+  servlet:
+    context-path: /drools/training/insurance
+
+#==============================
+# 2. Spring Applications
+#==============================
+spring:
+  application:
+    name: drools-training-insurance
+  profiles:
+    active: dev
+
+
+
