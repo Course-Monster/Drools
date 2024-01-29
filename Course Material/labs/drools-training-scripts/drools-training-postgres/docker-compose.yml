@@ -1,0 +1,21 @@
+#=========================
+# Postgres latest version
+#=========================
+version: '3'
+services:
+  drools-training-postgres:
+   image: postgres
+   container_name: drools-training-postgres
+   restart: always
+   ports:
+    - '5431:5431'
+   environment:
+    - POSTGRES_USER=drools
+    - POSTGRES_PASSWORD=drools
+    - POSTGRES_DB=drools
+   networks:
+    - drools-training-db
+networks:
+ drools-training-db:
+   name: drools-training-db
+   external: true

@@ -27,6 +27,7 @@ services:
     networks:
       - drools-training
       - drools-training-db
+      - quankee-db
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://drools-training-config-server:8888/actuator/health || exit 1
       interval: 20s
@@ -44,4 +45,7 @@ networks:
     external: true
   drools-training:
     name: drools-training
+    external: true
+  quankee-db:
+    name: quankee-db
     external: true

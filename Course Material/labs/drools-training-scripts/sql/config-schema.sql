@@ -1,0 +1,25 @@
+DROP SCHEMA IF EXISTS DROOLS_TRAINING_CONFIG CASCADE;
+
+-- create schema
+CREATE SCHEMA IF NOT EXISTS DROOLS_TRAINING_CONFIG;
+
+-- Drop Table if exists
+DROP TABLE IF EXISTS DROOLS_TRAINING_CONFIG.PROPERTIES;
+
+
+-- create Table on schema
+CREATE TABLE DROOLS_TRAINING_CONFIG.PROPERTIES
+(
+  application VARCHAR(200) NOT NULL,
+  profile VARCHAR(200) NOT NULL,
+  label VARCHAR(200) NOT NULL,
+  version VARCHAR(50) NOT NULL,
+  state VARCHAR(50) NOT NULL,
+  key VARCHAR(200) NOT NULL,
+  value TEXT,
+  create_user VARCHAR(50) DEFAULT current_user,
+  create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  last_update_user VARCHAR(50) DEFAULT current_user,
+  last_update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT properties_pk PRIMARY KEY (application, profile, key)
+);
