@@ -13,6 +13,15 @@
     <artifactId>drools-training-insurance-web</artifactId>
     <name>Drools Training Insurance Web</name>
 
+    <!-- dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>africa.skunkworks.training</groupId>
+            <artifactId>drools-training-insurance-manager</artifactId>
+        </dependency>
+
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
