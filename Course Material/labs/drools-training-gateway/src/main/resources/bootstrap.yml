@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      uri: http://drools-training-config-server:8888/
+      enabled: true
+      profile: dev
+      label: latest
