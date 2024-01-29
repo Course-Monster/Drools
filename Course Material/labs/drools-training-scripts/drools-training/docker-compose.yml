@@ -18,6 +18,22 @@ services:
 #==========================
 # 3. Engine Config Server
 #==========================
+  drools-training-config-server:
+    image: drools-training/drools-training-config-server:1.0.0-SNAPSHOT
+    build: ../../drools-training-config-server
+    container_name: drools-training-config-server
+    ports:
+      - "8888:8888"
+    networks:
+      - drools-training
+      - drools-training-db
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://drools-training-config-server:8888/actuator/health || exit 1
+      interval: 20s
+      timeout: 30s
+    depends_on:
+      drools-training-eureka:
+        condition: service_healthy
 
 #==========================
 # 3. Networks
