@@ -20,9 +20,9 @@ services:
 # 3. Networks
 #==========================
 networks:
-  quankee-db:
+  drools-training-db:
     name: drools-training-db
     external: true
-  quankee-engine:
+  drools-training:
     name: drools-training
     external: true
