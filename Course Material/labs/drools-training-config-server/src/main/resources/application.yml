@@ -16,7 +16,7 @@ spring:
     hikari:
       connection-timeout: 5000
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://quankee-postgres:5432/drools?
+    url: jdbc:postgresql://drools-training-db:5432/drools?
     username: drools
     password: drools
   jpa:
