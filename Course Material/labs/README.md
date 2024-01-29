@@ -36,11 +36,16 @@ docker run -d --name drools-training-eureka --hostname drools-training-eureka -p
 docker build -t drools-training/drools-training-config-server:1.0.0-SNAPSHOT .
 docker image tag drools-training/drools-training-config-server:1.0.0-SNAPSHOT
 docker run -d --name drools-training-config-server --hostname drools-training-config-server -p 8888:8888 drools-training/drools-training-config-server:1.0.0-SNAPSHOT 
+http://localhost:8888/drools-training-gateway/dev/latest
 
+# 4.4 Gateway
+docker build -t drools-training/drools-training-gateway:1.0.0-SNAPSHOT .
+docker image tag drools-training/drools-training-gateway:1.0.0-SNAPSHOT
+docker run -d --name drools-training-gateway --hostname drools-training-gateway -p 8000:8000 drools-training/drools-training-gateway:1.0.0-SNAPSHOT 
 
 # Install PostgreSql Docker image
 docker pull postgres
-docker run --name drools-training-postgres -p 5432:5432 -e POSTGRES_USER=drools -e POSTGRES_PASSWORD=drools -e POSTGRES_DB=drools -d postgres
+docker run --name drools-training-postgres -p 5431:5431 -e POSTGRES_USER=drools -e POSTGRES_PASSWORD=drools -e POSTGRES_DB=drools -d postgres
 
 # from \Drools\Course Material\labs\drools-training-scripts\drools-training run the command:
 - docker-compose up
