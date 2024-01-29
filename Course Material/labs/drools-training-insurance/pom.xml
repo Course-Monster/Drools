@@ -13,6 +13,7 @@
 	<groupId>africa.skunkworks.training</groupId>
 	<artifactId>drools-training-insurance</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>Drools Training Insurance</name>
 	<description>Drools Training Insurance</description>
 
@@ -32,6 +33,11 @@
 		<!-- Testing Properties -->
 		<jacoco.maven.plugin.version>0.8.11</jacoco.maven.plugin.version>
 	</properties>
+
+	<!-- modules -->
+	<modules>
+		<module>drools-training-insurance-web</module>
+	</modules>
 
 	<dependencies>
 
