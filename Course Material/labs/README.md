@@ -43,6 +43,12 @@ docker build -t drools-training/drools-training-gateway:1.0.0-SNAPSHOT .
 docker image tag drools-training/drools-training-gateway:1.0.0-SNAPSHOT
 docker run -d --name drools-training-gateway --hostname drools-training-gateway -p 8000:8000 drools-training/drools-training-gateway:1.0.0-SNAPSHOT 
 
+# 4.5 Insurance
+docker build -t drools-training/drools-training-insurance:1.0.0-SNAPSHOT .
+docker image tag drools-training/drools-training-insurance:1.0.0-SNAPSHOT
+docker run -d --name drools-training-insurance --hostname drools-training-insurance -p 8001:8001 drools-training/drools-training-insurance:1.0.0-SNAPSHOT 
+
+
 # Install PostgreSql Docker image
 docker pull postgres
 docker run --name drools-training-postgres -p 5431:5431 -e POSTGRES_USER=drools -e POSTGRES_PASSWORD=drools -e POSTGRES_DB=drools -d postgres
