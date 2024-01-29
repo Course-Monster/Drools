@@ -16,9 +16,9 @@ spring:
     hikari:
       connection-timeout: 5000
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://drools-training-db:5432/drools?
-    username: drools
-    password: drools
+    url: jdbc:postgresql://quankee-postgres:5432/quankee?
+    username: quankee
+    password: quankee
   jpa:
     show-sql: true
     properties:
@@ -29,7 +29,7 @@ spring:
       server:
         jdbc:
           order: 0
-          sql: SELECT key, value FROM DROOLS_CONFIG.PROPERTIES WHERE application=? and profile=? and label=?
+          sql: SELECT key, value FROM DROOLS_TRAINING_CONFIG.PROPERTIES WHERE application=? and profile=? and label=?
         bootstrap: false
         default-profile: native
         default-label: latest

@@ -29,7 +29,7 @@ spring:
       server:
         jdbc:
           order: 0
-          sql: SELECT key, value FROM DROOLS_CONFIG.PROPERTIES WHERE application=? and profile=? and label=?
+          sql: SELECT key, value FROM DROOLS_TRAINING_CONFIG.PROPERTIES WHERE application=? and profile=? and label=?
         bootstrap: false
         default-profile: native
         default-label: latest
