@@ -37,6 +37,7 @@
 	<!-- modules -->
 	<modules>
 		<module>drools-training-insurance-domain</module>
+		<module>drools-training-insurance-repository</module>
 		<module>drools-training-insurance-web</module>
 	</modules>
 
@@ -97,6 +98,14 @@
 
 		<dependencies>
 
+			<!-- Insurance -->
+			<dependency>
+				<groupId>africa.skunkworks.training</groupId>
+				<artifactId>drools-training-insurance-domain</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
@@ -140,6 +149,7 @@
 						<rule>
 							<element>CLASS</element>
 							<excludes>
+								<exclude>africa.skunkworks.training.drools.insurance.repository.config.RepositoryConfig</exclude>
 								<exclude>africa.skunkworks.training.drools.insurance.DroolsTrainingInsuranceApplication</exclude>
 							</excludes>
 							<limits>
