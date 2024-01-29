@@ -15,6 +15,9 @@ services:
      test: wget --no-verbose --tries=1 --spider http://drools-training-eureka:8761/actuator/health || exit 1
      interval: 10s
      timeout: 30s
+#==========================
+# 3. Engine Config Server
+#==========================
 
 #==========================
 # 3. Networks

@@ -27,9 +27,16 @@
 # 4. Docker
 # 4.1 Drools Training 
 ### Docker build ####
+# 4.2 Eureka
 docker build -t drools-training/drools-training-eureka:1.0.0-SNAPSHOT .
 docker image tag drools-training/drools-training-eureka:1.0.0-SNAPSHOT
 docker run -d --name drools-training-eureka --hostname drools-training-eureka -p 8761:8761 drools-training/drools-training-eureka:1.0.0-SNAPSHOT 
+
+# 4.3 Config Server
+docker build -t drools-training/drools-training-config-server:1.0.0-SNAPSHOT .
+docker image tag drools-training/drools-training-config-server:1.0.0-SNAPSHOT
+docker run -d --name drools-training-config-server --hostname drools-training-config-server -p 8888:8888 drools-training/drools-training-config-server:1.0.0-SNAPSHOT 
+
 
 # Install PostgreSql Docker image
 docker pull postgres
