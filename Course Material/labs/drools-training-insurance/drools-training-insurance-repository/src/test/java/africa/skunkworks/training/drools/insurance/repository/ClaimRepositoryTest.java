@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ClaimRepositoryTest extends AbstractRepositoryTest{
@@ -17,5 +19,7 @@ public class ClaimRepositoryTest extends AbstractRepositoryTest{
     public void listAllClaims(){
         List<Claim> claims = claimRepository.findAll();
         assertNotNull(claims);
+        assertFalse(claims.isEmpty());
+        assertEquals(5, claims.size());
     }
 }
