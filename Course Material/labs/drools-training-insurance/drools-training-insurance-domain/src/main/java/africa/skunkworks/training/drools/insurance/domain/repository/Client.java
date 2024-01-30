@@ -3,10 +3,12 @@ package africa.skunkworks.training.drools.insurance.domain.repository;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -31,6 +33,12 @@ public class Client implements Serializable {
 
     @Column(name = "IS_EMPLOYED")
     private Boolean isEmployed;
+
+    @Column(name = "ANNUAL_INCOME")
+    private BigDecimal annualIncome;
+
+    @OneToOne(mappedBy = "client")
+    private ClientIdentification clientIdentification;
 
     public Client() {
     }
@@ -75,17 +83,33 @@ public class Client implements Serializable {
         isEmployed = employed;
     }
 
+    public BigDecimal getAnnualIncome() {
+        return annualIncome;
+    }
+
+    public void setAnnualIncome(BigDecimal annualIncome) {
+        this.annualIncome = annualIncome;
+    }
+
+    public ClientIdentification getClientIdentification() {
+        return clientIdentification;
+    }
+
+    public void setClientIdentification(ClientIdentification clientIdentification) {
+        this.clientIdentification = clientIdentification;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Client client = (Client) o;
-        return Objects.equals(clientId, client.clientId) && Objects.equals(clientName, client.clientName) && Objects.equals(birthdate, client.birthdate) && Objects.equals(isSmoker, client.isSmoker) && Objects.equals(isEmployed, client.isEmployed);
+        return Objects.equals(clientId, client.clientId) && Objects.equals(clientName, client.clientName) && Objects.equals(birthdate, client.birthdate) && Objects.equals(isSmoker, client.isSmoker) && Objects.equals(isEmployed, client.isEmployed) && Objects.equals(annualIncome, client.annualIncome) && Objects.equals(clientIdentification, client.clientIdentification);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(clientId, clientName, birthdate, isSmoker, isEmployed);
+        return Objects.hash(clientId, clientName, birthdate, isSmoker, isEmployed, annualIncome, clientIdentification);
     }
 
     @Override
@@ -96,6 +120,8 @@ public class Client implements Serializable {
                 ", birthdate=" + birthdate +
                 ", isSmoker=" + isSmoker +
                 ", isEmployed=" + isEmployed +
+                ", annualIncome=" + annualIncome +
+                ", clientIdentification=" + clientIdentification +
                 '}';
     }
 }
