@@ -80,7 +80,7 @@ life insurance amount = 5000000
 - **Reflection**: Reflect on how Drools can be applied to other scenarios and its impact on decision automation.
 
 >[!NOTE]
-|By completing these exercises, delegates will gain hands-on experience with Drools, from setting up the |environment to writing complex rules for a real-world application, testing, and optimizing rule execution.
+By completing these exercises, delegates will gain hands-on experience with Drools, from setting up the environment to writing complex rules for a real-world application, testing, and optimizing rule execution.
 
 ---
 
@@ -89,6 +89,5 @@ life insurance amount = 5000000
 
 ---
 
->[!ATTENTION]
-|John Paul and Ivan, Feel free to enhance this guide further with additional cases, detailed setup |instructions, or troubleshooting tips to make the lab session as informative and engaging as possible.
+>[!ATTENTION] John Paul and Ivan, Feel free to enhance this guide further with additional cases, detailed setup instructions, or troubleshooting tips to make the lab session as informative and engaging as possible.
 
