@@ -27,7 +27,8 @@ Ensure your development environment is ready by installing JDK 17, Maven, and Do
 
 ---
 
-JDK 17
+#### ☕ **JDK 17**
+
 
 To work with Java applications, JDK 17 is required. Here's how to set it up:
 
@@ -54,7 +55,7 @@ To work with Java applications, JDK 17 is required. Here's how to set it up:
 
 ---
 
-**Maven**
+#### 🖼️ **Maven**
 
 Maven is a build automation tool used primarily for Java projects.
 
@@ -74,7 +75,7 @@ Maven is a build automation tool used primarily for Java projects.
 
 ---
 
-#### [[Docker]]
+#### 🐳 **Docker**
 
 Docker is a platform for developing, shipping, and running applications inside lightweight containers.
 
