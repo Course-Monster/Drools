@@ -79,7 +79,7 @@ life insurance amount = 5000000
 - **Documentation**: Document your approach, key learnings, and any challenges faced.
 - **Reflection**: Reflect on how Drools can be applied to other scenarios and its impact on decision automation.
 
-|>[!NOTE]
+>[!NOTE]
 |By completing these exercises, delegates will gain hands-on experience with Drools, from setting up the |environment to writing complex rules for a real-world application, testing, and optimizing rule execution.
 
 ---
