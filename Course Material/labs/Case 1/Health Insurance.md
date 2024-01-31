@@ -4,7 +4,7 @@
 These lab exercises are designed to guide delegates through understanding and using the Drools Rules Engine in the context of a Health Insurance scenario. Delegates will learn to define, manipulate, and extend rules for determining health insurance coverage based on various factors like salary, family size, health risk factors, and geographical location.
 
 ``` Rule
-Rule "Checking Amount of Life Insurance"
+Rule "Checking Amount of Health Insurance"
 when salary >= 18000 and salary <= 50000
 then life insurance amount = 1000000
 else
