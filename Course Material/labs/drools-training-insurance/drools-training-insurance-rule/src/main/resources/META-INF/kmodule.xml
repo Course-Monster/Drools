@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
+
+    <kbase name="demo1" packages="africa.skunkworks.training.drools.insurance.lesson01.demo01">
+        <ksession name="validate-application-01" type="stateless"/>
+    </kbase>
+</kmodule>

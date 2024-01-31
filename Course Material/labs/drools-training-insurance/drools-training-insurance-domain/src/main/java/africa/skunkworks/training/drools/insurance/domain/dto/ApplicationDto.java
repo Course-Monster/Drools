@@ -30,4 +30,6 @@ public class ApplicationDto implements Serializable {
     private Integer bmi;
 
     private String risk;
+
+    private String reason;
 }
