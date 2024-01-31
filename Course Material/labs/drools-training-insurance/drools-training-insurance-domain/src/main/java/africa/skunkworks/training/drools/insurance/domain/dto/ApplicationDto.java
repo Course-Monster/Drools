@@ -28,4 +28,6 @@ public class ApplicationDto implements Serializable {
     private Integer clientAge;
 
     private Integer bmi;
+
+    private String risk;
 }

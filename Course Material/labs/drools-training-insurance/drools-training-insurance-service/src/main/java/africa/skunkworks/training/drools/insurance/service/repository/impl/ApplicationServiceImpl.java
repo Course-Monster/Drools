@@ -37,6 +37,7 @@ public class ApplicationServiceImpl implements ApplicationService {
                       .isSmoker(client.getSmoker())
                       .bmi(Integer.valueOf(application.getBmi()))
                       .pec(application.getPec())
+                      .risk(application.getRisk())
                       .build()
             );
         });
