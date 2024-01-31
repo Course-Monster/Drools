@@ -1,6 +1,6 @@
 # **Folder for drools usecase lab**
 
-To enhance your `lab.md` for the Drools UseCase lab, I'll add more detailed instructions, missing code snippets, and steps to make the README visually appealing and comprehensive. Let's start by structuring the document into clear sections, including prerequisites, setup instructions, build and deployment guides, Docker configurations, and case studies with Drools.
+To enhance your `Drools Lab.md` for the Drools UseCase lab, I'll add more detailed instructions, missing code snippets, and steps to make the README visually appealing and comprehensive. Let's start by structuring the document into clear sections, including prerequisites, setup instructions, build and deployment guides, Docker configurations, and case studies with Drools.
 # Drools UseCase Lab Guide
 
 This lab guide is designed to walk you through the setup, build, and deployment of a Drools-based project utilizing Java, Docker, Spring Cloud, Spring Boot, and PostgreSQL.
@@ -713,4 +713,4 @@ This provides a solid foundation for your Drools-based loan application processi
 Feel free to enhance this guide further with additional cases, detailed setup instructions, or troubleshooting tips to make the lab session as informative and engaging as possible.
 ```
 
-This revised `lab.md` file includes more structured instructions, Docker commands, Drools rule examples, and formatting improvements for better readability and engagement.
+This revised `Drools Lab.md` file includes more structured instructions, Docker commands, Drools rule examples, and formatting improvements for better readability and engagement.
