@@ -98,13 +98,11 @@ By following these steps, financial institutions can effectively use Drools to a
 
 ---
 
-Feel free to enhance this guide further with additional details, code examples, or troubleshooting tips to make the lab session as informative and engaging as possible.
 ## 📖 References
 - [Spring Cloud](https://spring.io/projects/spring-cloud/)
 
 ---
-
+```
 Feel free to enhance this guide further with additional cases, detailed setup instructions, or troubleshooting tips to make the lab session as informative and engaging as possible.
 ```
-
-This revised `Drools Lab.md` file includes more structured instructions, Docker commands, Drools rule examples, and formatting improvements for better readability and engagement.
+---
