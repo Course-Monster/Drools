@@ -1,5 +1,6 @@
 package africa.skunkworks.training.drools.insurance.domain.dto;
 
+import africa.skunkworks.training.drools.insurance.domain.enums.Status;
 import lombok.Builder;
 import lombok.Data;
 
@@ -32,4 +33,6 @@ public class ApplicationDto implements Serializable {
     private String risk;
 
     private String reason;
+
+    private Status status;
 }

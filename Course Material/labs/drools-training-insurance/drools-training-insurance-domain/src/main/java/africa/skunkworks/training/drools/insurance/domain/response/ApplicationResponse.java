@@ -16,4 +16,6 @@ public class ApplicationResponse implements Serializable {
     private static final long serialVersionUID = 5918719628288477310L;
 
     private String response;
+
+    private String status;
 }
