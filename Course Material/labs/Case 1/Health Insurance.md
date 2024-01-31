@@ -94,13 +94,12 @@ By completing these exercises, delegates will gain hands-on experience with Droo
 ---
 
 <div class="note">
-<p style="color: red; font-weight: bold;">[!:warning: **ATTENTION**]</p>
+<p style="color: red; font-weight: bold;">:warning:**ATTENTION** 
 > 
 > Feel free to enhance this guide further with additional cases, detailed setup instructions, or troubleshooting tips to make the lab session as informative and engaging as possible.
+</p>
 </div>
 ---
 ---
 
 
-This is a note.
-</div>
