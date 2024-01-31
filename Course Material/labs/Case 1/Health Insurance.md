@@ -79,7 +79,16 @@ life insurance amount = 5000000
 - **Documentation**: Document your approach, key learnings, and any challenges faced.
 - **Reflection**: Reflect on how Drools can be applied to other scenarios and its impact on decision automation.
 
-By completing these exercises, delegates will gain hands-on experience with Drools, from setting up the environment to writing complex rules for a real-world application, testing, and optimizing rule execution.
+|>[!NOTE]
+|By completing these exercises, delegates will gain hands-on experience with Drools, from setting up the |environment to writing complex rules for a real-world application, testing, and optimizing rule execution.
 
 ---
 
+## 📖 References
+- [Spring Cloud](https://spring.io/projects/spring-cloud/)
+
+---
+```
+Feel free to enhance this guide further with additional cases, detailed setup instructions, or troubleshooting tips to make the lab session as informative and engaging as possible.
+```
+---
