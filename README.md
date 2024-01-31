@@ -220,52 +220,118 @@ On Day 2, we delve into advanced Drools features and language specifics. The day
 
 ---
 
-### **Module 4: Mastery of the Drools Rule Engine**
+### Module 4: Mastery of the Drools Rule Engine
 
-#### **Objective:**
-Gain in-depth knowledge of the Drools Rule Engine's capabilities, focusing on advanced rule execution control and complex event processing, applied within the Health Insurance scenario.
+**Objective:** 
+Gain comprehensive expertise in the Drools Rule Engine, with a specific focus on advanced rule execution control and complex event processing, applied effectively within the Health Insurance scenario.
 
-#### **Topics Covered:**
-- **KIE Sessions Setup**: Learn to configure KIE sessions specifically for the Health Insurance case study.
-- **Advanced Rule Execution Control**: Explore inference, truth maintenance, and advanced rule execution control to manage complex insurance coverage decisions.
-- **Complex Event Processing (CEP)**: Understand CEP within Drools to track and analyze health insurance claims over time.
+**Topics Covered:**
 
-#### **Lab Exercise Series: Health Insurance**
-1. **Configuring KIE Sessions for Health Insurance**: Set up and utilize KIE sessions tailored to health insurance rules.
-2. **Implementing Advanced Rule Controls**: Apply advanced execution controls like agenda groups and salience to manage health insurance rule execution.
-3. **Building a CEP Application for Health Insurance**: Develop a CEP application to monitor and adjust health insurance claims in real-time.
+1. **KIE Sessions Setup**
+   - Learn to configure KIE sessions tailored specifically for the Health Insurance case study.
+   - Understand the crucial role of KIE sessions in efficient rule execution.
+
+2. **Advanced Rule Execution Control**
+   - Explore advanced rule execution control mechanisms such as inference, truth maintenance, and agenda groups.
+   - Apply these advanced techniques to manage complex insurance coverage decisions effectively.
+   
+3. **Inference and Truth Maintenance**
+   - Dive deep into the concept of inference in rule engines and how Drools maintains the accuracy of facts.
+   - Examine real-world use cases, like automatically retracting a health insurance offer when an applicant's eligibility changes.
+
+4. **Agenda Groups and Salience**
+   - Define agenda groups and their significance in organizing and prioritizing rules.
+   - Implement salience values to ensure critical rules take precedence in health insurance rule execution.
+
+5. **Complex Event Processing (CEP)**
+   - Understand CEP within Drools and its applications in tracking and analyzing health insurance claims over time.
+   - Explore CEP operators and temporal reasoning in Drools.
+
+6. **Building a CEP Application for Health Insurance**
+   - Develop a CEP application within Drools to monitor and dynamically adjust health insurance claims in real-time.
+   - Step-by-step construction of a CEP rule to detect unusual patterns in claim submissions.
+
+7. **Lab Exercise Series: Health Insurance**
+   - Practical hands-on exercises to reinforce your understanding of the concepts learned.
+   
+8. **Configuring KIE Sessions for Health Insurance**
+   - Set up and utilize KIE sessions specifically tailored to health insurance rules.
+   - Create a dedicated environment for rule execution in the health insurance domain.
+
+9. **Implementing Advanced Rule Controls**
+   - Apply advanced rule execution control techniques, including agenda groups and salience, to effectively manage health insurance rule execution.
+   - Observe the impact of these controls on rule execution order and efficiency.
+
+10. **Building a CEP Application for Health Insurance**
+    - Develop a comprehensive CEP application to monitor, analyze, and adapt health insurance claims in real-time.
+    - Use Drools to detect and respond to emerging claim patterns.
+
+By exploring these subtopics, you will gain a deep understanding of how to leverage the Drools Rule Engine's advanced capabilities for rule execution and event processing within the context of health insurance, ultimately enhancing decision-making processes in the industry.
 
 ---
 
-### **Module 5: Drools Rule Language (DRL) Essentials**
+### Module 5: Drools Rule Language (DRL) Essentials
 
-#### **Objective:**
+**Objective:**
 Delve into the syntax and structure of DRL, learning to write effective rules and utilize advanced features within the context of health insurance.
 
-#### **Topics Covered:**
-- **DRL Syntax and Structure**: Explore the foundational syntax and structure of DRL as it applies to health insurance.
-- **Writing Effective Rules**: Learn best practices for writing clear, efficient, and maintainable health insurance rules.
-- **Rule Units and Queries**: Use DRL to segment health insurance rules and query the knowledge base for specific conditions.
+**Topics Covered:**
 
-#### **Lab Exercise Series: Health Insurance**
-4. **Syntax Practice with Health Insurance Rules**: Write DRL rules to determine insurance coverage based on applicant details.
-5. **Advanced Rule Writing for Health Insurance**: Utilize rule units and queries to create a sophisticated set of rules for various insurance scenarios.
+1. **DRL Syntax and Structure**
+   - Explore the foundational syntax and structure of DRL as it applies specifically to health insurance.
+   - Understand the key elements that make up DRL rules, ensuring clarity and correctness.
+
+2. **Writing Effective Rules**
+   - Learn best practices for crafting clear, efficient, and maintainable health insurance rules in DRL.
+   - Discover techniques to enhance the readability and usability of your rulebase.
+
+3. **Rule Units and Queries**
+   - Utilize DRL to segment health insurance rules into manageable units, improving rulebase organization.
+   - Learn how to create and use queries to efficiently retrieve information from the knowledge base.
+
+4. **Lab Exercise Series: Health Insurance**
+   - Practical hands-on exercises to reinforce your understanding of DRL syntax and advanced rule writing within the health insurance domain.
+   
+5. **Syntax Practice with Health Insurance Rules**
+   - Write DRL rules that determine insurance coverage based on applicant details, applying the syntax and structure concepts learned.
+   
+6. **Advanced Rule Writing for Health Insurance**
+   - Explore rule units and queries to create a sophisticated set of rules for various health insurance scenarios, solving complex insurance-related challenges.
+
+By exploring these subtopics and completing the lab exercises, you will gain proficiency in writing effective DRL rules for health insurance applications, enhancing your ability to model and manage complex insurance scenarios using Drools.
 
 ---
 
-### **Module 6: Decision Modeling with DMN in Drools**
+### Module 6: Decision Modeling with DMN in Drools
 
-#### **Objective:**
+**Objective:**
 Explore how Decision Model and Notation (DMN) can be used to encapsulate decision logic for health insurance determinations, making complex decision-making processes more manageable and transparent.
 
-#### **Topics Covered:**
-- **DMN Overview**: Introduction to DMN in Drools, focusing on its application in health insurance decision-making.
-- **Building Effective DMN Models**: Construct DMN models that accurately reflect the decision-making process for determining insurance coverage and premiums.
-- **Advanced DMN Modeling Techniques**: Dive deeper into DMN to model more complex health insurance decisions.
+**Topics Covered:**
 
-#### **Lab Exercise Series: Health Insurance**
-6. **DMN Modeling for Insurance Eligibility**: Create DMN models to evaluate eligibility criteria for health insurance.
-7. **Integrating DMN Models with Drools**: Embed and execute DMN models within the Drools environment for the health insurance scenario, analyzing their effectiveness in simplifying decision logic.
+1. **DMN Overview**
+   - Introduction to DMN in Drools, emphasizing its application in health insurance decision-making.
+   - Understand the foundational concepts of DMN and its role in simplifying complex decisions.
+
+2. **Building Effective DMN Models**
+   - Learn how to construct DMN models that accurately represent the decision-making process for determining insurance coverage and premiums.
+   - Utilize DMN elements to create clear and transparent decision models.
+
+3. **Advanced DMN Modeling Techniques**
+   - Dive deeper into DMN modeling, exploring advanced techniques for modeling complex health insurance decisions.
+   - Discover strategies for handling intricate decision scenarios effectively.
+
+4. **Lab Exercise Series: Health Insurance**
+   - Practical hands-on exercises to reinforce your understanding of DMN modeling within the health insurance domain.
+   
+5. **DMN Modeling for Insurance Eligibility**
+   - Create DMN models to evaluate eligibility criteria for health insurance, applying the concepts learned in the module.
+   
+6. **Integrating DMN Models with Drools**
+   - Embed and execute DMN models within the Drools environment for the health insurance scenario.
+   - Analyze the effectiveness of DMN in simplifying decision logic and enhancing transparency in health insurance determinations.
+
+By exploring these subtopics and completing the lab exercises, you will gain proficiency in using DMN to model and simplify complex decision-making processes in the context of health insurance using Drools.
 
 ---
 

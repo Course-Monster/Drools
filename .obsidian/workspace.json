@@ -1,0 +1,206 @@
+{
+  "main": {
+    "id": "99a015a32072475d",
+    "type": "split",
+    "children": [
+      {
+        "id": "b51e4f1877be7f91",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dc70199e93b0204c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6c569969d55f5f40",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Course Material/Student Handbook.md.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "75d22e6ffaf011dc",
+    "type": "split",
+    "children": [
+      {
+        "id": "5629bbbd86d877b1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c65861e6494dd9ce",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5f3ae532dfd52e15",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "adc805c336c0136c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "3b726ff6bea829c4",
+    "type": "split",
+    "children": [
+      {
+        "id": "b6af97af987b47ff",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "377f05f2c3280db3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Course Material/Student Handbook.md.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ec068cf3cb93457a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Course Material/Student Handbook.md.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3cb9cd25535c19bc",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "465822c3f529ceab",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Course Material/Student Handbook.md.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "audio-recorder:Start/stop recording": false
+    }
+  },
+  "active": "6c569969d55f5f40",
+  "lastOpenFiles": [
+    "README.md",
+    "Course Material/Student Handbook.md.md",
+    "Course Material/labs/Case 2/Loan Application.md",
+    "Course Material/labs/Drools Lab Setup.md",
+    "Course Material/Student Handbook.pdf",
+    "Course Material/labs/drools-training-insurance/drools-training-insurance-service/src/test/resources/schema.sql",
+    "Course Material/labs/drools-training-insurance/drools-training-insurance-service/src/test/resources/data.sql",
+    "Course Material/labs/drools-training-insurance/drools-training-insurance-service/src/test/java/africa/skunkworks/training/drools/insurance/service/repository/PolicyServiceTest.java",
+    "Course Material/labs/drools-training-insurance/drools-training-insurance-service/src/test/java/africa/skunkworks/training/drools/insurance/service/repository/ClaimServiceTest.java",
+    "Course Material/labs/drools-training-insurance/drools-training-insurance-service/src/test/java/africa/skunkworks/training/drools/insurance/service/repository/ApplicationServiceTest.java",
+    "Course Material/labs/drools-training-insurance/drools-training-insurance-service/src/test/java/africa/skunkworks/training/drools/insurance/service/repository",
+    "Course Material/labs/drools-training-insurance/drools-training-insurance-service/src/main/java/africa/skunkworks/training/drools/insurance/service/repository/impl/PolicyServiceImpl.java",
+    "Course Material/labs/drools-training-insurance/drools-training-insurance-service/src/main/java/africa/skunkworks/training/drools/insurance/service/repository/impl/ApplicationServiceImpl.java",
+    "Course Material/labs/drools-training-insurance/drools-training-insurance-service/src/main/java/africa/skunkworks/training/drools/insurance/service/repository/impl/ClaimServiceImpl.java",
+    "Course Material/README.md",
+    "Course Material/labs/Case 3/Fraud Detection.md",
+    "Course Material/labs/Case 1/Health Insurance.md",
+    "Course Material/Exercises/Student Files/Raydo.md",
+    "Course Material/Exercises/Student Files/README.md",
+    "Course Material/Exercises/README.md",
+    "Course Material/Exercises/Lab Exercise 07 - Structuring Business Rules in Drools Rule Language (DRL).md",
+    "WhatsApp Image 2024-01-24 at 11.59.26_c34de5eb.jpg",
+    "Welcome.md",
+    "Oracle SQL Database exam mock test.md",
+    "Drools (1).png",
+    "Drools/Course Material/labs/README.md",
+    "Drools/Course Material/Exercises/README.md",
+    "Course Outline.md",
+    "Drools/README.md",
+    "Pasted image 20240124131510.png",
+    "ken099-lunde/README.md",
+    "ken099-lunde/Exam Prep/1Z0-071/Exam Preparation Guide.md",
+    "ken099-lunde/Exam Prep/README.md",
+    "Pasted image 20240124131537.png",
+    "Drools/Course Material/README.md",
+    "Drools/Course Material/Exercises/Student Files/README.md",
+    "Drools/Course Material/Exercises/Student Files/Raydo.md",
+    "Drools/Course Material/Exercises/Lab Exercise 07 - Structuring Business Rules in Drools Rule Language (DRL).md"
+  ]
+}
