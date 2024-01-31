@@ -89,6 +89,6 @@ life insurance amount = 5000000
 
 ---
 
->[!ATTENTION John Paul and Ivan]
-Feel free to enhance this guide further with additional cases, detailed setup instructions, or troubleshooting tips to make the lab session as informative and engaging as possible.
+>[!ATTENTION]
+|John Paul and Ivan, Feel free to enhance this guide further with additional cases, detailed setup |instructions, or troubleshooting tips to make the lab session as informative and engaging as possible.
 
