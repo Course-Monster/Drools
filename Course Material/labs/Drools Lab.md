@@ -191,7 +191,7 @@ After deploying your services, access them using the following URLs:
 - **Eureka Dashboard**: [http://localhost:8761/](http://localhost:8761/)
 
 ```
-> :summary: **Summary**
+>🚧 **Summary**
 > By following these steps, you'll be able to build, deploy, and run your loan application processing components both locally and within Docker containers, providing a robust environment for development and testing.
 ```
 ---
