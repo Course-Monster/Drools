@@ -425,8 +425,7 @@ This provides a solid foundation for your Drools-based loan application processi
 ## 📖 References
 - [Spring Cloud](https://spring.io/projects/spring-cloud/)
 
----
-```
-Feel free to enhance this guide further with additional cases, detailed setup instructions, or troubleshooting tips to make the lab session as informative and engaging as possible.
-```
+> :warning: **ATTENTION**:
+> Feel free to enhance this guide further with additional cases, detailed setup instructions, or >troubleshooting tips to make the lab session as informative and engaging as possible.
+> 
 ---
