@@ -9,16 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("validateApplicationLesson01Demo02")
-public class ValidateApplicationLesson01Demo02  extends AbstractValidateApplication implements ValidateApplication {
+@Component("validateApplicationLesson01Demo03")
+public class ValidateApplicationLesson01Demo03 extends AbstractValidateApplication implements ValidateApplication {
 
     @Autowired
-    public ValidateApplicationLesson01Demo02(@Qualifier("kieContainerLesson01demo02") KieContainer kieContainer) {
+    public ValidateApplicationLesson01Demo03(@Qualifier("kieContainerLesson01demo03") KieContainer kieContainer) {
         super(kieContainer);
     }
-
     @Override
     public ApplicationResponse validateApplication(ApplicationDto applicationDto) {
-       return super.validateApplication(applicationDto);
+        return super.validateApplication(applicationDto);
     }
 }
