@@ -50,16 +50,16 @@ _"Mastering Drools 8"_ is an intensive 3-day program focused on equipping partic
 
 ### **Day 2: _Advanced Features & Language_**
 
-- **Module 4:** In-depth Rule Engine _(2hrs)_
-- **Module 5:** DRL Essentials _(2hrs)_
-- **Module 6:** Decision Modeling with DMN _(2hrs)_
+- **Module 4:** KIE Sessions & Basic Rule Logic & Cross Products _(2hrs)_
+- **Module 5:** Fact Objects, Execution Control, and Truth Maintenance _(2hrs)_
+- **Module 6:** Working with Object Groups _(2hrs)_
 
 ### **Day 3: _AI Integration & Skills Upgrade_**
 
-- **Module 7:** AI Integration in Drools _(2hrs)_
-- **Module 8:** Proficiency in Drools Commands _(1hr)_
-- **Module 9:** Transitioning to Drools 8 _(2hrs)_
-- **Module 10:** Current Trends in Drools _(1hr)_
+- **Module 7:** Complex Event Processing  _(1hrs)_
+- **Module 8:** DMN Models and Spreadsheet Decision Tables _(1hr)_
+- **Module 9:** Rule Templates & Dynamic Rule Creation  _(1hrs)_
+- **Module 10:** Capstone Project  _(3hrs)_
 
 ---
 ## **🖥️ Delivery Method**
