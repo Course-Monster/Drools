@@ -6,8 +6,8 @@ To enhance your `lab.md` for the Drools UseCase lab, I'll add more detailed inst
 This lab guide is designed to walk you through the setup, build, and deployment of a Drools-based project utilizing Java, Docker, Spring Cloud, Spring Boot, and PostgreSQL.
 
 ### 🛠 Tech Stack
-- [[Java 17]]
-- [[Docker]]
+- Java 17
+- Docker
 - Drools
 - Spring Cloud
 - Spring Boot
@@ -27,7 +27,7 @@ Ensure your development environment is ready by installing JDK 17, Maven, and Do
 
 ---
 
-[[JDK 17]]
+JDK 17
 
 To work with Java applications, JDK 17 is required. Here's how to set it up:
 
