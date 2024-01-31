@@ -16,9 +16,21 @@
     <!-- dependencies -->
     <dependencies>
 
+        <!-- Insurance -->
         <dependency>
             <groupId>africa.skunkworks.training</groupId>
             <artifactId>drools-training-insurance-domain</artifactId>
+        </dependency>
+
+        <!-- Drools -->
+        <dependency>
+            <groupId>org.drools</groupId>
+            <artifactId>drools-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.kie</groupId>
+            <artifactId>kie-spring</artifactId>
         </dependency>
     </dependencies>
 
