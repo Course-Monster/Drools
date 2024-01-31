@@ -1,12 +1,14 @@
 package africa.skunkworks.training.drools.insurance.rule.lesson01.demo01;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
+import africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse;
 import africa.skunkworks.training.drools.insurance.rule.AbstractRuleTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ValidateApplicationDemo01Test extends AbstractRuleTest {
 
@@ -19,8 +21,9 @@ public class ValidateApplicationDemo01Test extends AbstractRuleTest {
         //Invalid application
         ApplicationDto applicationDto = getApplication(17, Boolean.TRUE, Boolean.FALSE);
 
-        validateApplication.validateApplication(applicationDto);
-        assertEquals("Ivan Guambe", applicationDto.getReason());
+        ApplicationResponse response = validateApplication.validateApplication(applicationDto);
+        assertNotNull(response);
+        assertEquals("Application Invalid - Client is minor, unemployed, or has PECs", response.getResponse());
     }
 
     private ApplicationDto getApplication(Integer clientAge, Boolean pec, Boolean isEmployed){

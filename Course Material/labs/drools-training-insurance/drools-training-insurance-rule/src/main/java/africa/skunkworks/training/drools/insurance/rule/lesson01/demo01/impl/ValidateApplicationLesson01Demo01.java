@@ -1,6 +1,7 @@
 package africa.skunkworks.training.drools.insurance.rule.lesson01.demo01.impl;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
+import africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse;
 import africa.skunkworks.training.drools.insurance.rule.lesson01.demo01.ValidateApplication;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
@@ -19,10 +20,14 @@ public class ValidateApplicationLesson01Demo01 implements ValidateApplication {
     }
 
     @Override
-    public void validateApplication(ApplicationDto applicationDto) {
+    public ApplicationResponse validateApplication(ApplicationDto applicationDto) {
+        ApplicationResponse applicationResponse = new ApplicationResponse();
         KieSession kieSession = kieContainer.newKieSession();
-        kieSession.setGlobal("application", applicationDto);
+        kieSession.setGlobal("applicationResponse", applicationResponse);
+        kieSession.insert(applicationDto);
         kieSession.fireAllRules();
         kieSession.dispose();
+
+        return applicationResponse;
     }
 }
