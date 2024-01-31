@@ -1,4 +1,4 @@
-package africa.skunkworks.training.drools.insurance.rule.lesson01.demo01;
+package africa.skunkworks.training.drools.insurance.rule.lesson01;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
 import africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse;
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class ValidateApplicationDemo01Test extends AbstractRuleTest {
+public class ValidateApplicationLesson01Demo01Test extends AbstractRuleTest {
 
     @Autowired
     @Qualifier("validateApplicationLesson01Demo01")
@@ -33,11 +33,4 @@ public class ValidateApplicationDemo01Test extends AbstractRuleTest {
 
     }
 
-    private ApplicationDto getApplication(Integer clientAge, Boolean pec, Boolean isEmployed){
-        return ApplicationDto.builder()
-                .clientAge(clientAge)
-                .pec(pec)
-                .isEmployed(isEmployed)
-                .build();
-    }
 }

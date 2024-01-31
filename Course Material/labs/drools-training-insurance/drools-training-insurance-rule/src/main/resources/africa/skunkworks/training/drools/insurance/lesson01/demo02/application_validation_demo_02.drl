@@ -1,0 +1,35 @@
+package africa.skunkworks.training.drools.insurance.lesson01.demo02;
+
+import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
+
+global africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse applicationResponse;
+
+dialect  "java"
+
+rule "Invalid application - underage"
+    when
+        ApplicationDto( clientAge < 18)
+    then
+        applicationResponse.setResponse("Application Invalid  client is underage");
+end
+
+rule "Invalid application – unemployed"
+    when
+         ApplicationDto( !isEmployed )
+    then
+         applicationResponse.setResponse("Application Invalid – client is unemployed");
+end
+
+rule "Invalid application – has pre-existing conditions"
+    when
+        ApplicationDto(pec)
+     then
+        applicationResponse.setResponse("Application Invalid – client has PECs");
+end
+
+rule "Valid Application"
+    when
+        ApplicationDto( clientAge >= 18 && isEmployed && !pec )
+    then
+        applicationResponse.setResponse("Application Validated");
+end
