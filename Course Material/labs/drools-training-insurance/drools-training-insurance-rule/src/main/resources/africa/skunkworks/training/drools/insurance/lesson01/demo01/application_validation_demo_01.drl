@@ -4,7 +4,7 @@ import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
 
 global africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto application;
 
- dialect "java"
+dialect  "java"
 
 rule "Invalidate application with Pre-existing conditions, underage, or unemployed"
     when

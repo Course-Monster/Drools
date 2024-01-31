@@ -16,7 +16,7 @@ public class RuleConfig {
 
     private static final String DROOL_FILE = "africa/skunkworks/training/drools/insurance/lesson01/demo01/application_validation_demo_01.drl";
 
-    @Bean
+    @Bean("kieContainerLesson01demo01")
     public KieContainer kieContainer(){
         KieServices kieServices = KieServices.Factory.get();
 
