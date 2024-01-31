@@ -24,6 +24,13 @@ public class ValidateApplicationDemo01Test extends AbstractRuleTest {
         ApplicationResponse response = validateApplication.validateApplication(applicationDto);
         assertNotNull(response);
         assertEquals("Application Invalid - Client is minor, unemployed, or has PECs", response.getResponse());
+
+        //Validate application
+        applicationDto = getApplication(25, Boolean.FALSE, Boolean.TRUE);
+        response = validateApplication.validateApplication(applicationDto);
+        assertNotNull(response);
+        assertEquals("Application Validated", response.getResponse());
+
     }
 
     private ApplicationDto getApplication(Integer clientAge, Boolean pec, Boolean isEmployed){

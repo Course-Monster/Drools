@@ -17,5 +17,5 @@ rule "Valid Application"
     when
         ApplicationDto( clientAge >= 18 && isEmployed && !pec)
     then
-        applicationResponse.setResponse("Application Invalid - Client is minor, unemployed, or has PECs");
+        applicationResponse.setResponse("Application Validated");
 end
