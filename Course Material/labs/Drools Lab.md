@@ -1,28 +1,101 @@
 # **Folder for drools usecase lab**
 
-# 1. Tech Stack
-- Java 17
-- 
-- Docker
+To enhance your `lab.md` for the Drools UseCase lab, I'll add more detailed instructions, missing code snippets, and steps to make the README visually appealing and comprehensive. Let's start by structuring the document into clear sections, including prerequisites, setup instructions, build and deployment guides, Docker configurations, and case studies with Drools.
+# Drools UseCase Lab Guide
+
+This lab guide is designed to walk you through the setup, build, and deployment of a Drools-based project utilizing Java, Docker, Spring Cloud, Spring Boot, and PostgreSQL.
+
+### 🛠 Tech Stack
+- [[Java 17]]
+- [[Docker]]
 - Drools
 - Spring Cloud
 - Spring Boot
 - PostgreSQL
 
-# 2. Instructions
-2.1 Install and Setup JDK 17
-2.2 Install and Setup Maven 2
-2.3 Install and Setup Docker
+### 📋 Prerequisites
+Ensure you have the following installed:
+- IntelliJ
+- JDK 17
+- Maven
+- Docker
+- Docker Compose (for orchestrating multiple containers)
 
+### 🔧 Setup Instructions
 
-# 3. Build and deploy
-# 3.1 Build each project
-- mvn clean install
+Ensure your development environment is ready by installing JDK 17, Maven, and Docker. These tools are essential for building and running the loan application processing project.
 
-# 3.2 Run Eureka, Config Server and Gateway
-- mvn spring-boot:run
+---
 
+[[JDK 17]]
 
+To work with Java applications, JDK 17 is required. Here's how to set it up:
+
+1. **Download JDK 17**:
+   - Visit [AdoptOpenJDK](https://adoptopenjdk.net/) or your preferred JDK provider.
+   - Select JDK 17 from the available versions.
+   - Choose the appropriate installer for your operating system (Windows, macOS, Linux).
+
+2. **Install JDK 17**:
+   - Run the downloaded installer.
+   - Follow the on-screen instructions to complete the installation.
+
+3. **Configure `JAVA_HOME` and Update `PATH`**:
+   - **Windows**:
+     - Search for "Environment Variables" in the Start menu and select "Edit the system environment variables".
+     - In the System Properties dialog, click "Environment Variables".
+     - Under "System Variables", click "New" to add `JAVA_HOME` and point it to the JDK installation directory (e.g., `C:\Program Files\Java\jdk-17`).
+     - Find the `Path` variable and add the JDK `bin` directory (e.g., `C:\Program Files\Java\jdk-17\bin`).
+   - **macOS/Linux**:
+     - Open your terminal.
+     - Edit your shell profile file (e.g., `~/.bash_profile`, `~/.zshrc`, etc.).
+     - Add `export JAVA_HOME=$(/usr/libexec/java_home -v 17)` and `export PATH=$JAVA_HOME/bin:$PATH`.
+     - Save the file and run `source <profile-file>` to apply the changes.
+
+---
+
+**Maven**
+
+Maven is a build automation tool used primarily for Java projects.
+
+1. **Download Maven**:
+   - Go to the [Apache Maven download page](https://maven.apache.org/download.cgi).
+   - Download the latest version of Maven (zip or tar.gz).
+
+2. **Extract Maven**:
+   - Extract the downloaded archive to a location of your choice (e.g., `C:\apache-maven` on Windows or `/opt/apache-maven` on macOS/Linux).
+
+3. **Update `PATH` Environment Variable**:
+   - Follow similar steps as for setting `JAVA_HOME`, but add the Maven `bin` directory to your `PATH`.
+
+4. **Verify Maven Installation**:
+   - Open a new terminal or command prompt.
+   - Execute `mvn -version` to verify that Maven is correctly installed and can be accessed from anywhere.
+
+---
+
+#### [[Docker]]
+
+Docker is a platform for developing, shipping, and running applications inside lightweight containers.
+
+1. **Download Docker Desktop**:
+   - Visit [Docker Hub](https://hub.docker.com/) and download Docker Desktop for your operating system.
+
+2. **Install Docker Desktop**:
+   - Run the downloaded installer and follow the instructions to install Docker Desktop on your machine.
+
+3. **Verify Docker Installation**:
+   - Open a terminal or command prompt.
+   - Run `docker --version` to ensure Docker was installed successfully.
+
+4. **Launch Docker Desktop**:
+   - Start Docker Desktop from your applications menu. On the first launch, it might ask for additional permissions or setup steps, especially on macOS and Windows.
+
+---
+
+After completing these setup instructions, your environment will be ready for developing and running Java applications, building projects with Maven, and creating and managing Docker containers for your applications.
+
+---
 
 # 4. Docker
 # 4.1 Drools Training 
