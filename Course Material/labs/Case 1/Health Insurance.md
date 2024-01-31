@@ -99,4 +99,6 @@ By completing these exercises, delegates will gain hands-on experience with Droo
 ---
 ---
 
-
+<div class="note">
+This is a note.
+</div>
