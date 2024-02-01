@@ -3,11 +3,11 @@ package africa.skunkworks.training.drools.insurance.rule.lesson01;
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
 import africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse;
 import africa.skunkworks.training.drools.insurance.rule.AbstractRuleTest;
+import africa.skunkworks.training.drools.insurance.rule.ValidateApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ValidateApplicationLesson01Demo02Test extends AbstractRuleTest {

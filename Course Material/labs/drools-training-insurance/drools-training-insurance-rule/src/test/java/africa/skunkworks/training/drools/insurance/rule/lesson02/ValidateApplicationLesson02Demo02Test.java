@@ -1,6 +1,7 @@
-package africa.skunkworks.training.drools.insurance.rule.lesson01;
+package africa.skunkworks.training.drools.insurance.rule.lesson02;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
+import africa.skunkworks.training.drools.insurance.domain.enums.Status;
 import africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse;
 import africa.skunkworks.training.drools.insurance.rule.AbstractRuleTest;
 import africa.skunkworks.training.drools.insurance.rule.ValidateApplication;
@@ -8,43 +9,42 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class ValidateApplicationLesson01Demo03Test extends AbstractRuleTest {
+public class ValidateApplicationLesson02Demo02Test extends AbstractRuleTest {
 
     @Autowired
-    @Qualifier("validateApplicationLesson01Demo03")
+    @Qualifier("validateApplicationLesson02Demo02")
     private ValidateApplication validateApplication;
 
     @Test
     public void validateApplication(){
-        //Invalid application from minor
-        ApplicationDto applicationDto = getApplication(17, Boolean.FALSE, Boolean.TRUE);
+        //Invalidate application if not employed
+        ApplicationDto applicationDto = getApplication(25, Boolean.FALSE, Boolean.FALSE);
         ApplicationResponse response = validateApplication.validateApplication(applicationDto);
         assertNotNull(response);
-       // assertEquals("ApplicationDto(applicationNumber=null, clientName=null, clientIdentificationNumber=null, pec=false, isEmployed=true, isSmoker=null, clientAge=17, bmi=null, risk=null, reason=null, status=null): Invalid – employed: true", response.getResponse());
+        assertEquals(Status.DENIED, applicationDto.getStatus());
+        assertEquals("Client unemployed", applicationDto.getReason());
 
-        //Invalid application – unemployed
-        applicationDto = getApplication(25, Boolean.FALSE, Boolean.FALSE);
+        //Invalidate application from minor
+        applicationDto = getApplication(17, Boolean.FALSE, Boolean.TRUE);
         response = validateApplication.validateApplication(applicationDto);
         assertNotNull(response);
-        //assertEquals("Application Invalid – client is unemployed", response.getResponse());
+        assertEquals(Status.DENIED, applicationDto.getStatus());
 
+        //Invalid application – has pre-existing conditions
         applicationDto = getApplication(25, Boolean.TRUE, Boolean.TRUE);
         response = validateApplication.validateApplication(applicationDto);
         assertNotNull(response);
-
-        applicationDto = getApplication(18, Boolean.FALSE, Boolean.FALSE);
-        response = validateApplication.validateApplication(applicationDto);
-        assertNotNull(response);
-
+        assertEquals(Status.DENIED, applicationDto.getStatus());
 
         //Valid Application
         applicationDto = getApplication(25, Boolean.FALSE, Boolean.TRUE);
+        applicationDto.setStatus(Status.PENDING);
         response = validateApplication.validateApplication(applicationDto);
         assertNotNull(response);
-        //assertEquals("ApplicationDto(applicationNumber=null, clientName=null, clientIdentificationNumber=null, pec=false, isEmployed=true, isSmoker=null, clientAge=25, bmi=null, risk=null, reason=null, status=null): Validated", response.getResponse());
+        assertEquals(Status.APPROVED, applicationDto.getStatus());
 
     }
-
 }

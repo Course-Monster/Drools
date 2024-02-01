@@ -1,0 +1,52 @@
+package africa.skunkworks.training.drools.insurance.lesson01.demo02;
+
+import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
+import africa.skunkworks.training.drools.insurance.domain.enums.Status;
+
+global africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse applicationResponse;
+
+dialect  "java"
+
+rule "Invalidate application if not employed"
+    when
+        $application: ApplicationDto( !isEmployed )
+    then
+        applicationResponse.setResponse($application + ": Invalid – Unemployed");
+        modify($application) {
+            setStatus(Status.DENIED),
+            setReason( "Client unemployed")
+        }
+end
+
+rule "Invalidate application from minor"
+    when
+        $application: ApplicationDto( clientAge < 18 )
+
+    then
+        applicationResponse.setResponse($application + ": Invalid – Minor");
+        modify($application) {
+            setStatus(Status.DENIED),
+            setReason( "Client underaged")
+        }
+end
+
+rule "Invalid application – has pre-existing conditions"
+    when
+        $application: ApplicationDto( pec )
+    then
+        applicationResponse.setResponse($application + ": Invalid – Client has PEC");
+        modify($application) {
+            setStatus(Status.DENIED),
+            setReason( "Client has PEC")
+        }
+end
+
+rule "Valid Application"
+    when
+        $application: ApplicationDto( status == Status.PENDING )
+    then
+        applicationResponse.setResponse($application + ": Approval Granted!");
+        modify($application) {
+            setStatus(Status.APPROVED)
+        }
+end
