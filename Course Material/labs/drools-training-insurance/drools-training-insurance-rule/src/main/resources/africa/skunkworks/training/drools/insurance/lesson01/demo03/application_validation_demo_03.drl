@@ -1,0 +1,28 @@
+package africa.skunkworks.training.drools.insurance.lesson01.demo03;
+
+import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
+
+global africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse applicationResponse;
+
+dialect  "java"
+
+rule "Invalid application from minor"
+    when
+        $application: ApplicationDto ($clientAge: clientAge < 18)
+    then
+        applicationResponse.setResponse($application + ": Invalid – client age: " + $clientAge);
+end
+
+rule "Invalid application – unemployed"
+    when
+        $application: ApplicationDto( $employed: isEmployed )
+    then
+        applicationResponse.setResponse($application + ": Invalid – employed: " + $employed);
+end
+
+rule "Valid Application"
+    when
+         $application: ApplicationDto (!pec, isEmployed, clientAge >= 18)
+    then
+         applicationResponse.setResponse($application + ": Validated");
+end

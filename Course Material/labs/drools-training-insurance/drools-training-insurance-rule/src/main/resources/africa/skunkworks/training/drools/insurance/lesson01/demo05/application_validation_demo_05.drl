@@ -1,0 +1,39 @@
+package africa.skunkworks.training.drools.insurance.lesson01.demo05;
+
+import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
+
+global africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse applicationResponse;
+
+dialect  "java"
+
+rule "Invalid application - minor"
+    when
+        $application: ApplicationDto( clientAge < 18 )
+    then
+         applicationResponse.setResponse($application + ": Invalid – client age: " + $application.getClientAge());
+         applicationResponse.setStatus("DENIED");
+end
+
+rule "Invalid application - unemployed"
+    when
+        $application: ApplicationDto( !isEmployed)
+    then
+         applicationResponse.setResponse($application + ": Invalid - Client unemployed");
+         applicationResponse.setStatus("DENIED");
+end
+
+rule "Invalid application - Pre-existing Condition"
+    when
+        $application: ApplicationDto( pec )
+    then
+        System.out.println($application + ": Invalid - Client has PEC");
+         applicationResponse.setStatus("DENIED");
+end
+
+rule "Valid Application"
+    when
+        $application: ApplicationDto( status == "PENDING" )
+    then
+        System.out.println($application + ": Not Invalidated - Approval Granted");
+        applicationResponse.setStatus("APPROVED");
+end
