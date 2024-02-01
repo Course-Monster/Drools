@@ -1,5 +1,6 @@
 package africa.skunkworks.training.drools.insurance.domain.dto;
 
+import africa.skunkworks.training.drools.insurance.domain.enums.Status;
 import lombok.Builder;
 import lombok.Data;
 
@@ -21,4 +22,8 @@ public class ClaimDto implements Serializable {
     private LocalDate dateOfClaim;
 
     private Double claimAmount;
+
+    private Status status;
+
+    private String reason;
 }
