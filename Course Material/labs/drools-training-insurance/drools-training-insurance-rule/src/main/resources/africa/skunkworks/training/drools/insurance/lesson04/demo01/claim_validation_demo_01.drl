@@ -1,4 +1,4 @@
-package africa.skunkworks.training.drools.insurance.lesson03.demo01;
+package africa.skunkworks.training.drools.insurance.lesson04.demo01;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ClaimDto;
 import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
