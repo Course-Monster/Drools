@@ -2,6 +2,7 @@ package africa.skunkworks.training.drools.insurance.rule;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
 import africa.skunkworks.training.drools.insurance.domain.dto.ClaimDto;
+import africa.skunkworks.training.drools.insurance.domain.dto.ClientIdentificationDto;
 import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
 import africa.skunkworks.training.drools.insurance.rule.config.RuleConfig;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -35,6 +36,14 @@ public abstract class AbstractRuleTest {
                 .premium(premium)
                 .coverage(coverage)
                 .paymentStatus(paymentStatus)
+                .build();
+    }
+
+    protected ClientIdentificationDto getClientIdentification(String name,  String idNumber,LocalDate expiryDate){
+        return ClientIdentificationDto.builder()
+                .name(name)
+                .expiryDate(expiryDate)
+                .idNumber(idNumber)
                 .build();
     }
 }

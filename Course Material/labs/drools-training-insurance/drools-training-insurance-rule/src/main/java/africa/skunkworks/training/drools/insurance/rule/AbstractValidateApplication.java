@@ -2,6 +2,7 @@ package africa.skunkworks.training.drools.insurance.rule;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
 import africa.skunkworks.training.drools.insurance.domain.dto.ClaimDto;
+import africa.skunkworks.training.drools.insurance.domain.dto.ClientIdentificationDto;
 import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
 import africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse;
 import org.kie.api.runtime.KieContainer;
@@ -24,6 +25,19 @@ public abstract class AbstractValidateApplication {
         kieSession.dispose();
 
         return applicationResponse;
+    }
+
+    protected ApplicationResponse validateApplication(ApplicationDto applicationDto, ClientIdentificationDto clientIdentificationDto){
+        ApplicationResponse applicationResponse = new ApplicationResponse();
+        KieSession kieSession = kieContainer.newKieSession();
+        kieSession.setGlobal("applicationResponse", applicationResponse);
+        kieSession.insert(applicationDto);
+        kieSession.insert(clientIdentificationDto);
+        kieSession.fireAllRules();
+        kieSession.dispose();
+
+        return applicationResponse;
+
     }
 
     protected void validateClaim(ClaimDto claimDto, PolicyDto policyDto){
