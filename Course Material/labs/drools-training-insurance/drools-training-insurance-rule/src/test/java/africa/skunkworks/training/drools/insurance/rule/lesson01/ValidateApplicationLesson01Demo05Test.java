@@ -4,6 +4,7 @@ import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
 import africa.skunkworks.training.drools.insurance.domain.enums.Status;
 import africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse;
 import africa.skunkworks.training.drools.insurance.rule.AbstractRuleTest;
+import africa.skunkworks.training.drools.insurance.rule.ValidateApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
