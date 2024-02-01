@@ -1,5 +1,6 @@
 package africa.skunkworks.training.drools.insurance.domain.dto;
 
+import africa.skunkworks.training.drools.insurance.domain.enums.Status;
 import lombok.Builder;
 import lombok.Data;
 
@@ -19,4 +20,6 @@ public class ClientIdentificationDto implements Serializable {
     private String idNumber;
 
     private LocalDate expiryDate;
+
+    private Status status;
 }

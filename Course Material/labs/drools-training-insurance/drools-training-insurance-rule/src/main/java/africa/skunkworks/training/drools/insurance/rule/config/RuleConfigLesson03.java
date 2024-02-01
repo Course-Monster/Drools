@@ -13,7 +13,7 @@ public class RuleConfigLesson03 extends AbstractRuleConfig{
 
     private static final String DROOL_FILE_DEMO_02_2 = "africa/skunkworks/training/drools/insurance/lesson03/demo02/validate_application_demo_02_2.drl";
 
-    //private static final String DROOL_FILE_DEMO_03 = "africa/skunkworks/training/drools/insurance/lesson03/demo03/claim_validation_demo_03.drl";
+    private static final String DROOL_FILE_DEMO_03 = "africa/skunkworks/training/drools/insurance/lesson03/demo03/application_client_identification_validation_demo_03.drl";
 
     @Bean("kieContainerLesson03demo01")
     public KieContainer kieContainerDemo01(){
@@ -28,6 +28,11 @@ public class RuleConfigLesson03 extends AbstractRuleConfig{
     @Bean("kieContainerLesson03demo0202")
     public KieContainer kieContainerDemo0202(){
         return getKieContainer(DROOL_FILE_DEMO_02_2);
+    }
+
+    @Bean("kieContainerLesson03demo03")
+    public KieContainer kieContainerDemo03(){
+        return getKieContainer(DROOL_FILE_DEMO_03);
     }
 
 
