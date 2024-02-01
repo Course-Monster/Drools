@@ -15,7 +15,7 @@ end
 
 rule "Invalid application – unemployed"
     when
-        $application: ApplicationDto( $employed: !isEmployed )
+        $application: ApplicationDto( $employed: isEmployed )
     then
         applicationResponse.setResponse($application + ": Invalid – employed: " + $employed);
 end
