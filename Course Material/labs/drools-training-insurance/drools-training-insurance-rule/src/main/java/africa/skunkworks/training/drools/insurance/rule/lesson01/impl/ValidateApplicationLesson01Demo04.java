@@ -9,11 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-//@Component("validateApplicationLesson01Demo04")
+@Component("validateApplicationLesson01Demo04")
 public class ValidateApplicationLesson01Demo04 extends AbstractValidateApplication implements ValidateApplication {
 
-    //@Autowired
-    public ValidateApplicationLesson01Demo04(@Qualifier("kieContainerLesson01demo04") KieContainer kieContainer) {
+    @Autowired
+    public ValidateApplicationLesson01Demo04(@Qualifier("kieContainerLesson01demo4") KieContainer kieContainer) {
         super(kieContainer);
     }
 

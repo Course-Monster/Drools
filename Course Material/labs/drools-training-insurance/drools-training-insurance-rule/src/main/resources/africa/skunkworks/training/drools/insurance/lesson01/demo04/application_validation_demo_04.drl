@@ -15,7 +15,7 @@ end
 
 rule "Invalid application - unemployed"
     when
-      $application: ApplicationDto( $employed: !isEmployed )
+      $application: ApplicationDto( $employed: isEmployed )
     then
       applicationResponse.setStatus("DENIED");
 end
@@ -31,5 +31,5 @@ rule "Valid Application"
     when
          $application: ApplicationDto (!pec, isEmployed, clientAge >= 18)
     then
-         applicationResponse.setStatus("DENIED");
+         applicationResponse.setStatus("APPROVED");
 end
