@@ -22,7 +22,7 @@ public class ValidateApplicationAndClientIdentificationLesson03Demo02Test extend
     private ValidateApplication validateApplication;
 
     @Test
-    public void validateApplication(){
+    public void validateApplicationMissingId(){
         //Invalidate applications with missing ID
         ApplicationDto applicationDto = getApplication(18, Boolean.FALSE, Boolean.TRUE);
         applicationDto.setClientIdentificationNumber("ID-100");
@@ -32,25 +32,41 @@ public class ValidateApplicationAndClientIdentificationLesson03Demo02Test extend
         ApplicationResponse response = validateApplication.validateApplication(applicationDto, clientIdentificationDto);
         assertNotNull(response);
         assertEquals(Status.DENIED, applicationDto.getStatus());
+        System.out.println("++++++++++++++++++++++++++++++++++++++++ SCENARIO 1 ++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println(response.getResponse());
 
-        //Invalidate applications with incorrect name
-        applicationDto = getApplication(18, Boolean.FALSE, Boolean.TRUE);
+
+    }
+
+    @Test
+    public void validateApplicationIncorrectName(){
+        ApplicationDto applicationDto = getApplication(18, Boolean.FALSE, Boolean.TRUE);
         applicationDto.setClientIdentificationNumber("ID-100");
+        applicationDto.setClientName("John Lennon");
 
-        clientIdentificationDto = getClientIdentification("John Lennon", "ID-100", LocalDate.now());
+        ClientIdentificationDto clientIdentificationDto = getClientIdentification("John Smith", "ID-100", LocalDate.now());
 
-        response = validateApplication.validateApplication(applicationDto, clientIdentificationDto);
+        ApplicationResponse response = validateApplication.validateApplication(applicationDto, clientIdentificationDto);
         assertNotNull(response);
         assertEquals(Status.DENIED, applicationDto.getStatus());
+        System.out.println("++++++++++++++++++++++++++++++++++++++++ SCENARIO 2 ++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println(response.getResponse());
+    }
+
+    @Test
+    public void validateApplicationExpiredId(){
 
         //Invalidate applications with Expired ID
-        applicationDto = getApplication(18, Boolean.FALSE, Boolean.TRUE);
+        ApplicationDto applicationDto = getApplication(18, Boolean.FALSE, Boolean.TRUE);
         applicationDto.setClientIdentificationNumber("ID-100");
 
-        clientIdentificationDto = getClientIdentification("John Lennon", "ID-100", LocalDate.of(2023,12,15));
+        ClientIdentificationDto clientIdentificationDto = getClientIdentification("John Lennon", "ID-100", LocalDate.of(2023,12,15));
 
-        response = validateApplication.validateApplication(applicationDto, clientIdentificationDto);
+        ApplicationResponse response = validateApplication.validateApplication(applicationDto, clientIdentificationDto);
         assertNotNull(response);
         assertEquals(Status.DENIED, applicationDto.getStatus());
+        System.out.println("++++++++++++++++++++++++++++++++++++++++ SCENARIO 3 ++++++++++++++++++++++++++++++++++++++++++++++");
+        System.out.println(response.getResponse());
+
     }
 }
