@@ -10,20 +10,16 @@ import java.time.LocalDate;
 
 @Data
 @Builder
-public class ClaimDto implements Serializable {
+public class ClientIdentificationDto implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = -7145980387821913205L;
+    private static final long serialVersionUID = 4978583599192950429L;
 
-    private String clientName;
+    private String name;
 
-    private String policyNumber;
+    private String idNumber;
 
-    private LocalDate dateOfClaim;
-
-    private Double claimAmount;
+    private LocalDate expiryDate;
 
     private Status status;
-
-    private String reason;
 }

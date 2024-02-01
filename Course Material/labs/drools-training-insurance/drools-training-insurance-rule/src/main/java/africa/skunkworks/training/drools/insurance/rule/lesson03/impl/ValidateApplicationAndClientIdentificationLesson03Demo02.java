@@ -1,4 +1,4 @@
-package africa.skunkworks.training.drools.insurance.rule.lesson01.impl;
+package africa.skunkworks.training.drools.insurance.rule.lesson03.impl;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
 import africa.skunkworks.training.drools.insurance.domain.dto.ClientIdentificationDto;
@@ -10,21 +10,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("validateApplicationLesson01Demo04")
-public class ValidateApplicationLesson01Demo04 extends AbstractValidateApplication implements ValidateApplication {
+@Component("validateApplicationAndClientIdentificationLesson03Demo02")
+public class ValidateApplicationAndClientIdentificationLesson03Demo02 extends AbstractValidateApplication implements ValidateApplication {
 
     @Autowired
-    public ValidateApplicationLesson01Demo04(@Qualifier("kieContainerLesson01demo4") KieContainer kieContainer) {
+    public ValidateApplicationAndClientIdentificationLesson03Demo02(@Qualifier("kieContainerLesson03demo02") KieContainer kieContainer) {
         super(kieContainer);
     }
 
     @Override
     public ApplicationResponse validateApplication(ApplicationDto applicationDto) {
-        return super.validateApplication(applicationDto);
+        return null;
     }
 
     @Override
     public ApplicationResponse validateApplication(ApplicationDto applicationDto, ClientIdentificationDto clientIdentificationDto) {
-        return null;
+        return super.validateApplication(applicationDto,clientIdentificationDto);
     }
 }

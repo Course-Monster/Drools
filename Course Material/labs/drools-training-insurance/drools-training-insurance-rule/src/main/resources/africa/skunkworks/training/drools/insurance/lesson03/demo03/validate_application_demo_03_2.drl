@@ -1,4 +1,4 @@
-package africa.skunkworks.training.drools.insurance.lesson02.demo02;
+package africa.skunkworks.training.drools.insurance.lesson03.demo03;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
 import africa.skunkworks.training.drools.insurance.domain.enums.Status;
@@ -8,8 +8,10 @@ global africa.skunkworks.training.drools.insurance.domain.response.ApplicationRe
 dialect  "java"
 
 rule "Invalidate application if not employed"
+    dialect "java"
     when
-        $application: ApplicationDto( !isEmployed )
+        $application: ApplicationDto( !isEmployed,
+                                   status != Status.DENIED )
     then
         applicationResponse.setResponse($application + ": Invalid – Unemployed");
         modify($application) {
@@ -19,8 +21,10 @@ rule "Invalidate application if not employed"
 end
 
 rule "Invalidate application from minor"
+    dialect "java"
     when
-        $application: ApplicationDto( clientAge < 18 )
+        $application: ApplicationDto( clientAge < 18,
+                                   status != Status.DENIED )
 
     then
         applicationResponse.setResponse($application + ": Invalid – Minor");
@@ -31,8 +35,10 @@ rule "Invalidate application from minor"
 end
 
 rule "Invalid application – has pre-existing conditions"
+    dialect "java"
     when
-        $application: ApplicationDto( pec )
+        $application: ApplicationDto( pec,
+                                   status != Status.DENIED )
     then
         applicationResponse.setResponse($application + ": Invalid – Client has PEC");
         modify($application) {
@@ -42,6 +48,7 @@ rule "Invalid application – has pre-existing conditions"
 end
 
 rule "Valid Application"
+    dialect "java"
     when
         $application: ApplicationDto( status == Status.PENDING )
     then
