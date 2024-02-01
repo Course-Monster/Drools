@@ -42,10 +42,11 @@ public class RuleConfigLesson01 {
     public KieContainer kieContainerDemo04(){
         return getKieContainer(DROOL_FILE_DEMO_04);
     }
-    /**@Bean("kieContainerLesson01demo05")
+
+    @Bean("kieContainerLesson01demo05")
     public KieContainer kieContainerDemo05(){
         return getKieContainer(DROOL_FILE_DEMO_05);
-    }*/
+    }
 
     private KieContainer getKieContainer(String droolFile){
 
