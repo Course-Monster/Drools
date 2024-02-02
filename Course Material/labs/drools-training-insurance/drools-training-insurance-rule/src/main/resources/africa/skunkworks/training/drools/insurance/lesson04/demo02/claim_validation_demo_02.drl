@@ -48,7 +48,6 @@ rule "Invalidate claim with unpaid premiums"
         $claim: ClaimDto( status != Status.DENIED )
         $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), paymentStatus == "Unpaid" )
     then
-        System.out.println();
         modify($claim) {
             setReason($claim + ": failed. Unpaid premiums in " + $policy),
             setStatus(Status.DENIED)
