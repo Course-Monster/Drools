@@ -12,14 +12,14 @@ rule "Valid Claims"
     when
         $claim: ClaimDto( status == Status.PENDING )
     then
-    modify($claim) {
-        setReason($claim + ": not invalidated. Approval Granted"),
-        setStatus(Status.APPROVED)
-    }
+        modify($claim) {
+            setReason($claim + ": not invalidated. Approval Granted"),
+            setStatus(Status.APPROVED)
+        }
 end
 
 rule "Invalidate claim without matching policy"
-    agenda-group "invalid-claim"
+    agenda-group "invalid-claim-wrong-policy"
     when
         $claim: ClaimDto( status != Status.DENIED )
         not PolicyDto( policyNumber == $claim.getPolicyNumber() )
@@ -31,13 +31,11 @@ rule "Invalidate claim without matching policy"
 end
 
 rule "Invalidate claim that exceeds coverage"
-    dialect "java"
     agenda-group "invalid-claim"
     when
         $claim: ClaimDto( status != Status.DENIED )
         $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), coverage < $claim.getClaimAmount() )
     then
-        System.out.println();
         modify($claim) {
             setReason($claim + ": failed. Coverage in policy " + $policy + " insufficient."),
             setStatus(Status.DENIED)
@@ -45,15 +43,15 @@ rule "Invalidate claim that exceeds coverage"
 end
 
 rule "Invalidate claim with unpaid premiums"
-    dialect "java"
-    agenda-group "invalid-claim"
+    agenda-group "invalid-claim-unpaid-premiums"
     when
         $claim: ClaimDto( status != Status.DENIED )
         $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), paymentStatus == "Unpaid" )
     then
-        System.out.println();
         modify($claim) {
             setReason($claim + ": failed. Unpaid premiums in " + $policy),
             setStatus(Status.DENIED)
         }
 end
+
+

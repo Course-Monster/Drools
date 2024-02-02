@@ -40,10 +40,25 @@ public abstract class AbstractValidateApplication {
 
     }
 
+    protected void validateClaim(ClaimDto claimDto){
+        this.validateClaim(claimDto,null);
+    }
+
     protected void validateClaim(ClaimDto claimDto, PolicyDto policyDto){
+       this.validateClaim(claimDto, policyDto, null);
+    }
+
+    protected void validateClaim(ClaimDto claimDto, PolicyDto policyDto, String agendaGroup){
         KieSession kieSession = kieContainer.newKieSession();
         kieSession.insert(claimDto);
-        kieSession.insert(policyDto);
+        if(null != policyDto){
+            kieSession.insert(policyDto);
+        }
+
+        if(null != agendaGroup){
+            kieSession.getAgenda().getAgendaGroup(agendaGroup).setFocus();
+        }
+
         kieSession.fireAllRules();
         kieSession.dispose();
     }

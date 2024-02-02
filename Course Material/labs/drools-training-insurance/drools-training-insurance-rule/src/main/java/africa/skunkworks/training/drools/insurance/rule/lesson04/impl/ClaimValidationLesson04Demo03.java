@@ -9,10 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("payoutLesson4Demo0202")
-public class PayoutLesson4Demo0202 extends AbstractValidateApplication implements ClaimValidation {
+@Component("claimValidationLesson04Demo03")
+public class ClaimValidationLesson04Demo03 extends AbstractValidateApplication implements ClaimValidation {
+
     @Autowired
-    public PayoutLesson4Demo0202(@Qualifier("kieContainerLesson04demo0202") KieContainer kieContainer) {
+    public ClaimValidationLesson04Demo03(@Qualifier("kieContainerLesson04demo03") KieContainer kieContainer) {
         super(kieContainer);
     }
 
@@ -23,11 +24,12 @@ public class PayoutLesson4Demo0202 extends AbstractValidateApplication implement
 
     @Override
     public void validateClaim(ClaimDto claimDto, PolicyDto policyDto) {
-        super.validateClaim(claimDto,policyDto);
+        super.validateClaim(claimDto, policyDto);
+
     }
 
     @Override
     public void validateClaim(ClaimDto claimDto, PolicyDto policyDto, String agendaGroup) {
-        super.validateClaim(claimDto,policyDto,agendaGroup);
+        super.validateClaim(claimDto, policyDto, agendaGroup);
     }
 }
