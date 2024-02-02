@@ -1,0 +1,18 @@
+package org.sw.lesson06.demo2;
+
+import org.sw.facts.FamilyApplication;
+import org.sw.facts.InvalidFamilyApplication
+import org.sw.facts.InvalidClientID;
+import org.sw.facts.ClientID;
+import org.sw.facts.Policy;
+import java.util.Random;
+
+rule "Invalidate family applications with single invalid ID"
+	dialect "java"
+	when
+		$familyApplication: FamilyApplication( )
+		exists InvalidClientID( $familyApplication.clientIdNumbers.contains(clientID.idNumber) )
+	then
+		System.out.println( "Set " + $familyApplication + " invalid - invalid ID found");
+		insert( new InvalidFamilyApplication($familyApplication) );
+end
