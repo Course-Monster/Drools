@@ -1,0 +1,52 @@
+package africa.skunkworks.training.drools.insurance.lesson04.demo01;
+
+import africa.skunkworks.training.drools.insurance.domain.dto.ClaimDto;
+import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
+import africa.skunkworks.training.drools.insurance.domain.enums.Status
+import africa.skunkworks.training.drools.insurance.domain.dto.Payout;
+
+dialect  "java"
+
+rule "Valid Claims"
+    when
+        $claim: ClaimDto( status == Status.PENDING )
+    then
+    modify($claim) {
+        setReason($claim + ": not invalidated. Approval Granted"),
+        setStatus(Status.APPROVED)
+    }
+end
+
+rule "Issue Payout"
+    when
+        $claim: ClaimDto(status == Status.APPROVED)
+    then
+        Payout payout = new Payout( $claim.getPolicyNumber(), $claim.getClaimAmount() );
+        insert( payout );
+        modify($claim){
+            setReason("New Payout: " + payout + " Issued")
+        }
+end
+
+rule "Invalidate claim that exceeds coverage"
+    when
+        $claim: ClaimDto( status != Status.DENIED )
+        $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), coverage < $claim.getClaimAmount() )
+    then
+        modify($claim) {
+            setReason($claim + ": failed. Coverage in policy " + $policy + " insufficient."),
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Invalidate claim with unpaid premiums"
+    dialect "java"
+    when
+        $claim: ClaimDto( status != Status.DENIED )
+        $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), paymentStatus == "Unpaid" )
+    then
+        modify($claim) {
+            setReason($claim + ": failed. Unpaid premiums in " + $policy),
+            setStatus(Status.DENIED)
+        }
+end
