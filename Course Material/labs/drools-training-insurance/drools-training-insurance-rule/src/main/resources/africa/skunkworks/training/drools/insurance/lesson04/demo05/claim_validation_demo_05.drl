@@ -20,7 +20,7 @@ rule "Valid Claims"
 end
 
 rule "Invalidate claim without matching policy"
-    agenda-group "claim-validation"
+    agenda-group "claim-validation-wrong-policy"
     salience 50
     when
         $claim: ClaimDto( status != Status.DENIED )
@@ -33,7 +33,7 @@ rule "Invalidate claim without matching policy"
 end
 
 rule "Invalidate claim that exceeds coverage"
-    agenda-group "claim-validation"
+    agenda-group "claim-validation-coverage"
     salience 50
     when
         $claim: ClaimDto( status != Status.DENIED )
@@ -46,7 +46,7 @@ rule "Invalidate claim that exceeds coverage"
 end
 
 rule "Invalidate claim with unpaid premiums"
-    agenda-group "claim-validation"
+    agenda-group "claim-validation-unpaid-premiums"
     salience 50
     when
         $claim: ClaimDto( status != Status.DENIED )

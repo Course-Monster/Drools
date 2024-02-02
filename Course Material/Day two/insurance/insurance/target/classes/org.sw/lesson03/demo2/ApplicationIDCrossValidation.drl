@@ -1,0 +1,42 @@
+package org.sw.lesson03.demo2;
+
+import org.sw.facts.Application;
+import org.sw.facts.ClientID;
+import org.sw.facts.Status;
+import java.time.LocalDate;
+
+rule "Invalidate applications with missing ID"
+    dialect "java"
+    when
+        $application: Application( )
+        not ClientID( idNumber == $application.clientIdNumber )
+    then
+        System.out.println($application + " Invalid – No matching ID found");
+        modify($application) {
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Invalidate applications with incorrect name"
+    dialect "java"
+    when
+        $application: Application( )
+        $clientID: ClientID( idNumber == $application.clientIdNumber, name != $application.clientName )
+    then
+        System.out.println($application + " Invalid – Name [" + $application.getClientName() + "] not matching name on ID [" + $clientID.getName() + "]");
+        modify($application) {
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Invalidate applications with Expired ID"
+    dialect "java"
+    when
+        $application: Application( )
+        $clientid: ClientID( idNumber == $application.clientIdNumber, expiryDate.isBefore(LocalDate.now()) )
+    then
+        System.out.println($application + " Invalid – " + $clientid + " ID expired");
+        modify($application) {
+            setStatus(Status.DENIED)
+        }
+end

@@ -1,0 +1,27 @@
+package org.sw.lesson01.demo3;
+
+import org.sw.facts.Application;
+
+rule "Invalid application from minor"
+    dialect "java"
+    when
+        $application: Application( $clientAge: clientAge < 18 )
+    then
+        System.out.println($application + ": Invalid – client age: " + $clientAge);
+end
+
+rule "Invalid application – unemployed"
+    dialect "java"
+    when
+        $application: Application( $employed: employed == false )
+    then
+        System.out.println($application + ": Invalid – unemployed: " + $employed);
+end
+
+rule "Valid Application"
+    dialect "java"
+    when
+        $application: Application( employed, clientAge >= 18 )
+    then
+        System.out.println($application + ": Validated");
+end

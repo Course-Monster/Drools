@@ -5,6 +5,7 @@ import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
 import africa.skunkworks.training.drools.insurance.domain.enums.Status
 import africa.skunkworks.training.drools.insurance.domain.dto.Payout;
 
+
 dialect  "java"
 
 rule "Valid Claims"
@@ -13,7 +14,7 @@ rule "Valid Claims"
     then
     modify($claim) {
         setReason($claim + ": not invalidated. Approval Granted"),
-        setStatus(Status.APPROVED)
+        setStatus(Status.VALID)
     }
 end
 
@@ -30,6 +31,7 @@ end
 
 rule "Invalidate claim that exceeds coverage"
     when
+
         $claim: ClaimDto( status != Status.DENIED )
         $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), coverage < $claim.getClaimAmount() )
     then
