@@ -70,9 +70,4 @@ public class RuleConfigLesson04 extends AbstractRuleConfig{
         return getKieContainer(DROOL_FILE_DEMO_05_2);
     }
 
-
-
-
-
-
 }
