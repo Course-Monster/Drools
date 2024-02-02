@@ -1,0 +1,34 @@
+package org.sw.lesson01.demo2;
+
+import org.sw.facts.Application;
+
+rule "Invalid application - underaged"
+    dialect "java"
+    when
+        Application( clientAge < 18 )
+    then
+        System.out.println("Application Invalid – client is underaged");
+end
+
+rule "Invalid application – unemployed"
+    dialect "java"
+    when
+        Application( !employed )
+    then
+        System.out.println("Application Invalid – client is unemployed");
+end
+
+rule "Invalid application – has pre-existing conditions"
+    dialect "java"
+    when
+        Application( PEC )
+    then
+        System.out.println("Application Invalid – client has PECs");
+end
+
+rule "Valid Application"
+    when
+        $application: Application( clientAge >= 18 && employed && !PEC )
+    then
+        System.out.println("Application Validated");
+end
