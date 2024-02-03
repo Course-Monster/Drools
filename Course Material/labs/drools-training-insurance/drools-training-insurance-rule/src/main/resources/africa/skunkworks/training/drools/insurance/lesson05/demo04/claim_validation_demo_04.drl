@@ -4,62 +4,43 @@ import africa.skunkworks.training.drools.insurance.domain.dto.ClaimDto;
 import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
 import africa.skunkworks.training.drools.insurance.domain.enums.Status
 import africa.skunkworks.training.drools.insurance.domain.dto.Payout;
+import africa.skunkworks.training.drools.insurance.domain.dto.InvalidClaim;
+import africa.skunkworks.training.drools.insurance.domain.dto.ValidClaim;
+import africa.skunkworks.training.drools.insurance.domain.dto.InvalidPolicy;
 
 dialect  "java"
 
-rule "Valid Claims"
-    when
-        $claim: ClaimDto( status == Status.PENDING )
-    then
-        modify($claim) {
-            setReason($claim + ": not invalidated. Approval Granted"),
-            setStatus(Status.APPROVED)
-        }
-end
-
-rule "Issue Payout"
-    when
-        $claim: ClaimDto(status == Status.APPROVED)
-    then
-        Payout payout = new Payout( $claim.getPolicyNumber(), $claim.getClaimAmount() );
-        insertLogical( payout );
-        modify($claim){
-            setReason("New Payout: " + payout + " Issued")
-        }
-end
-
 rule "Invalidate claim without matching policy"
-    dialect "java"
     when
-        $claim: ClaimDto( status != Status.DENIED )
+        $claim: ClaimDto( )
         not PolicyDto( policyNumber == $claim.getPolicyNumber() )
+        not InvalidClaim( $claim.policyNumber == $claim.policyNumber)
     then
-        modify($claim) {
-            setReason($claim + ": failed (no matching policy)"),
-            setStatus(Status.DENIED)
+        modify($claim){
+            setReason($claim + ": failed (no matching policy)")
         }
+        insert( new InvalidClaim($claim) );
 end
 
 rule "Invalidate claim that exceeds coverage"
-    dialect "java"
     when
-        $claim: ClaimDto( status != Status.DENIED )
+        $claim: ClaimDto( )
         $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), coverage < $claim.getClaimAmount() )
     then
-        modify($claim) {
-            setReason($claim + ": failed. Coverage in policy " + $policy + " insufficient."),
-            setStatus(Status.DENIED)
+        modify($claim){
+            setReason($claim + ": failed. Coverage in policy " + $policy + " insufficient.")
         }
+        insert( new InvalidClaim($claim) );
 end
 
-rule "Invalidate claim with unpaid premiums"
-    dialect "java"
+rule "Invalidate claim with invalid policy"
     when
-        $claim: ClaimDto( status != Status.DENIED )
-        $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), paymentStatus == "Unpaid" )
+        $invalidPolicy: InvalidPolicy( )
+        $claim: ClaimDto( policyNumber == $invalidPolicy.policy.policyNumber )
+        not InvalidClaim( $claim.policyNumber == $claim.policyNumber)
     then
-        modify($claim) {
-            setPolicyNumber($claim + ": failed. Unpaid premiums in " + $policy),
-            setStatus(Status.DENIED)
+        modify($claim){
+            setReason($claim + ": failed. " + $invalidPolicy + " Invalid")
         }
+        insert( new InvalidClaim($claim) );
 end
