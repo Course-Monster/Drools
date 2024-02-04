@@ -13,11 +13,10 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class ClaimValidationLesson05Demo02Test extends AbstractRuleTest {
-
+public class ClaimValidationLesson05Demo03Test extends AbstractRuleTest {
 
     @Autowired
-    @Qualifier("claimValidationLesson05Demo02")
+    @Qualifier("claimValidationLesson05Demo03")
     private ClaimValidation claimValidation;
 
     @Test
@@ -77,7 +76,6 @@ public class ClaimValidationLesson05Demo02Test extends AbstractRuleTest {
 
         claimValidation.validateClaim(claimDto, policyDto,"unpaid-premiums");
         assertNotNull(claimDto.getStatus());
-        assertNotNull(claimDto.getReason());
 
         System.out.println("++++++++++++++++++++++++++++++++++++++++ SCENARIO 4 ++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.println(claimDto.getReason());

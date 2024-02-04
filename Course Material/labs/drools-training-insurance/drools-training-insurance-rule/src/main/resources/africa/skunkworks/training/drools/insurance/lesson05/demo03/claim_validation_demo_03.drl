@@ -11,6 +11,7 @@ import africa.skunkworks.training.drools.insurance.domain.dto.InvalidPolicy;
 dialect  "java"
 
 rule "Valid Claims"
+    agenda-group "valid-claims"
     when
         $claim: ClaimDto( )
         not (InvalidClaim( claim == $claim) )
@@ -22,6 +23,7 @@ rule "Valid Claims"
 end
 
 rule "Invalidate claim without matching policy"
+    agenda-group "invalid-policy"
     when
         $claim: ClaimDto( )
         not PolicyDto( policyNumber == $claim.getPolicyNumber() )
@@ -34,6 +36,7 @@ rule "Invalidate claim without matching policy"
 end
 
 rule "Invalidate claim that exceeds coverage"
+    agenda-group "exceed-coverage"
     when
         $claim: ClaimDto( )
         $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), coverage < $claim.getClaimAmount() )
@@ -46,11 +49,14 @@ rule "Invalidate claim that exceeds coverage"
 end
 
 rule "Invalidate claim with invalid policy"
+    agenda-group "unpaid-premiums"
     when
         $invalidPolicy: InvalidPolicy( )
         $claim: ClaimDto( policyNumber == $invalidPolicy.policy.policyNumber )
         not InvalidClaim( $claim.policyNumber == $claim.policyNumber)
     then
-        System.out.println($claim + ": failed. " + $invalidPolicy + " Invalid");
+        modify($claim){
+            setReason($claim + ": failed. " + $invalidPolicy + " Invalid")
+        }
         insert( new InvalidClaim($claim) );
 end
