@@ -1,0 +1,58 @@
+package africa.skunkworks.training.drools.insurance.lesson05.demo02;
+
+import africa.skunkworks.training.drools.insurance.domain.dto.ClaimDto;
+import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
+import africa.skunkworks.training.drools.insurance.domain.enums.Status
+import africa.skunkworks.training.drools.insurance.domain.dto.Payout;
+import africa.skunkworks.training.drools.insurance.domain.dto.InvalidClaim;
+import africa.skunkworks.training.drools.insurance.domain.dto.ValidClaim;
+
+dialect  "java"
+
+rule "Valid Claims"
+    agenda-group "valid-claims"
+    when
+        $claim: ClaimDto( )
+        not (InvalidClaim( claim == $claim) )
+    then
+        modify($claim){
+            setReason($claim + ": not invalidated. Approval Granted")
+        }
+        insertLogical( new ValidClaim($claim) );
+end
+
+rule "Invalidate claim without matching policy"
+    agenda-group "invalid-policy"
+    when
+        $claim: ClaimDto( )
+        not PolicyDto( policyNumber == $claim.getPolicyNumber() )
+    then
+        modify($claim){
+            setReason($claim + ": failed (no matching policy)")
+        }
+        insert( new InvalidClaim($claim) );
+end
+
+rule "Invalidate claim that exceeds coverage"
+    agenda-group "exceed-coverage"
+    when
+        $claim: ClaimDto( )
+        $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), coverage < $claim.getClaimAmount() )
+    then
+        modify($claim){
+            setReason($claim + ": failed. Coverage in policy " + $policy + " insufficient.")
+        }
+        insert( new InvalidClaim($claim) );
+end
+
+rule "Invalidate claim with unpaid premiums"
+    agenda-group "unpaid-premiums"
+    when
+        $claim: ClaimDto( )
+        $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), paymentStatus == "Unpaid" )
+    then
+        modify($claim){
+            setReason($claim + ": failed. Unpaid premiums in " + $policy)
+        }
+        insert( new InvalidClaim($claim) );
+end

@@ -1,0 +1,23 @@
+package africa.skunkworks.training.drools.insurance.lesson05.demo03;
+
+import africa.skunkworks.training.drools.insurance.domain.dto.ClaimDto;
+import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
+import africa.skunkworks.training.drools.insurance.domain.enums.Status
+import africa.skunkworks.training.drools.insurance.domain.dto.Payout;
+import africa.skunkworks.training.drools.insurance.domain.dto.InvalidClaim;
+import africa.skunkworks.training.drools.insurance.domain.dto.ValidClaim;
+import africa.skunkworks.training.drools.insurance.domain.dto.InvalidPolicy;
+
+dialect  "java"
+
+rule "Issue Payout"
+    when
+        $claim: ClaimDto( )
+        not ( InvalidClaim( claim == $claim))
+    then
+        Payout payout = new Payout( $claim.getPolicyNumber(), $claim.getClaimAmount() );
+        modify($claim){
+            setReason("New Payout: " + payout + " Issued")
+        }
+        insertLogical( payout );
+end
