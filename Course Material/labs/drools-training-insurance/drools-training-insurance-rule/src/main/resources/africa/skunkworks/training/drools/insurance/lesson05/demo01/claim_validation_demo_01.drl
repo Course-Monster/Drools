@@ -8,6 +8,7 @@ import africa.skunkworks.training.drools.insurance.domain.dto.Payout;
 dialect  "java"
 
 rule "Valid Claims"
+    agenda-group "valid-claims"
     when
         $claim: ClaimDto( status == Status.PENDING )
     then
@@ -18,6 +19,7 @@ rule "Valid Claims"
 end
 
 rule "Issue Payout"
+    agenda-group "issue-payout"
     when
         $claim: ClaimDto(status == Status.APPROVED)
     then
@@ -29,7 +31,7 @@ rule "Issue Payout"
 end
 
 rule "Invalidate claim without matching policy"
-    dialect "java"
+    agenda-group "invalid-policy"
     when
         $claim: ClaimDto( status != Status.DENIED )
         not PolicyDto( policyNumber == $claim.getPolicyNumber() )
@@ -41,7 +43,7 @@ rule "Invalidate claim without matching policy"
 end
 
 rule "Invalidate claim that exceeds coverage"
-    dialect "java"
+    agenda-group "exceed-coverage"
     when
         $claim: ClaimDto( status != Status.DENIED )
         $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), coverage < $claim.getClaimAmount() )
@@ -53,13 +55,13 @@ rule "Invalidate claim that exceeds coverage"
 end
 
 rule "Invalidate claim with unpaid premiums"
-    dialect "java"
+    agenda-group "unpaid-premiums"
     when
         $claim: ClaimDto( status != Status.DENIED )
         $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), paymentStatus == "Unpaid" )
     then
         modify($claim) {
-            setPolicyNumber($claim + ": failed. Unpaid premiums in " + $policy),
+            setReason($claim + ": failed. Unpaid premiums in " + $policy),
             setStatus(Status.DENIED)
         }
 end
