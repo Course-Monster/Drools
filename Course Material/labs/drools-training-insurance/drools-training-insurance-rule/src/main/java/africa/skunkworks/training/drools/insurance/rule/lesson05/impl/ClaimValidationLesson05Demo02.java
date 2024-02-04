@@ -5,15 +5,12 @@ import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
 import africa.skunkworks.training.drools.insurance.rule.AbstractValidateApplication;
 import africa.skunkworks.training.drools.insurance.rule.ClaimValidation;
 import org.kie.api.runtime.KieContainer;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Component("claimValidationLesson05Demo01")
-public class ClaimValidationLesson05Demo01 extends AbstractValidateApplication implements ClaimValidation {
-
-    @Autowired
-    public ClaimValidationLesson05Demo01(@Qualifier("kieContainerLesson05demo01") KieContainer kieContainer) {
+@Component("claimValidationLesson05Demo02")
+public class ClaimValidationLesson05Demo02 extends AbstractValidateApplication implements ClaimValidation {
+    public ClaimValidationLesson05Demo02(@Qualifier("kieContainerLesson05demo02") KieContainer kieContainer) {
         super(kieContainer);
     }
 
