@@ -49,5 +49,5 @@ public class RuleConfigLesson05 extends AbstractRuleConfig {
 
     @Bean("kieContainerLesson05demo01")
     public KieContainer kieContainerDemo0403(){return getKieContainer(DROOL_FILE_DEMO_04_3);}
-    
+
 }

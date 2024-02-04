@@ -175,6 +175,12 @@
 			</dependency>
 
 			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-tms</artifactId>
+				<version>${drools.version}</version>
+			</dependency>
+
+			<dependency>
 				<groupId>org.kie</groupId>
 				<artifactId>kie-spring</artifactId>
 				<version>${kie.spring.version}</version>
