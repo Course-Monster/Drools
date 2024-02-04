@@ -13,7 +13,7 @@ public class ApplicationValidationTest extends AbstractRuleTest {
 
 
     @Autowired
-    private ApplicationValidation applicationValidation;
+    private ApplicationValidationRule applicationValidation;
 
     @Test
     public void validateApplicationIfNotEmployed(){

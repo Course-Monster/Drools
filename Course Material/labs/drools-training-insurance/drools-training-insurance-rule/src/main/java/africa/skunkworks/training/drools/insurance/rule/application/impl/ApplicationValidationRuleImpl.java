@@ -1,7 +1,7 @@
 package africa.skunkworks.training.drools.insurance.rule.application.impl;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
-import africa.skunkworks.training.drools.insurance.rule.application.ApplicationValidation;
+import africa.skunkworks.training.drools.insurance.rule.application.ApplicationValidationRule;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ApplicationValidationImpl implements ApplicationValidation {
+public class ApplicationValidationRuleImpl implements ApplicationValidationRule {
 
     private final KieContainer kieContainer;
 
     @Autowired
-    public ApplicationValidationImpl(@Qualifier("applicationKieContainer") KieContainer kieContainer) {
+    public ApplicationValidationRuleImpl(@Qualifier("applicationKieContainer") KieContainer kieContainer) {
         this.kieContainer = kieContainer;
     }
 
