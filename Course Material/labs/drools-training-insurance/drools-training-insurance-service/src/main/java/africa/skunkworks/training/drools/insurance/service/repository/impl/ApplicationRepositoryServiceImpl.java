@@ -3,7 +3,7 @@ package africa.skunkworks.training.drools.insurance.service.repository.impl;
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
 import africa.skunkworks.training.drools.insurance.domain.repository.Client;
 import africa.skunkworks.training.drools.insurance.repository.ApplicationRepository;
-import africa.skunkworks.training.drools.insurance.service.repository.ApplicationService;
+import africa.skunkworks.training.drools.insurance.service.repository.ApplicationRepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ApplicationServiceImpl implements ApplicationService {
+public class ApplicationRepositoryServiceImpl implements ApplicationRepositoryService {
 
     private final ApplicationRepository applicationRepository;
 
     @Autowired
-    public ApplicationServiceImpl(ApplicationRepository applicationRepository) {
+    public ApplicationRepositoryServiceImpl(ApplicationRepository applicationRepository) {
         this.applicationRepository = applicationRepository;
     }
 

@@ -16,13 +16,13 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class ApplicationServiceTest extends AbstractServiceTest {
+public class ApplicationRepositoryServiceTest extends AbstractServiceTest {
 
     @MockBean
     private ApplicationRepository applicationRepository;
 
     @Autowired
-    private ApplicationService applicationService;
+    private ApplicationRepositoryService applicationService;
 
     @Test
     public void listAllApplications(){
