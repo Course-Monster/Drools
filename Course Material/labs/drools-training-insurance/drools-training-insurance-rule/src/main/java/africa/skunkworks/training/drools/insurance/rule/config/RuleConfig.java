@@ -6,6 +6,6 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @ComponentScan({"africa.skunkworks.training.drools.insurance.rule"})
-@Import({RuleConfigLesson01.class, RuleConfigLesson02.class, RuleConfigLesson03.class, RuleConfigLesson04.class})
+@Import({RuleConfigLesson01.class, RuleConfigLesson02.class, RuleConfigLesson03.class, RuleConfigLesson04.class, RuleConfigApplication.class})
 public class RuleConfig {
 }
