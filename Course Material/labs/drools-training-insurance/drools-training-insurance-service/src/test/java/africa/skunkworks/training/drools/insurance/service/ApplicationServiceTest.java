@@ -2,18 +2,14 @@ package africa.skunkworks.training.drools.insurance.service;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
 import africa.skunkworks.training.drools.insurance.domain.enums.Status;
-import africa.skunkworks.training.drools.insurance.service.repository.ApplicationRepositoryService;
-import africa.skunkworks.training.drools.insurance.service.rule.ApplicationRuleService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.when;
 
 public class ApplicationServiceTest extends AbstractServiceTest{
 
