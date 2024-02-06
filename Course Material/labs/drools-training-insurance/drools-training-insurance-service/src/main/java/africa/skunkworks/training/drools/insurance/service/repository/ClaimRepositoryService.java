@@ -4,7 +4,7 @@ import africa.skunkworks.training.drools.insurance.domain.dto.ClaimDto;
 
 import java.util.List;
 
-public interface ClaimService {
+public interface ClaimRepositoryService {
 
     List<ClaimDto> listAllClaims();
 }

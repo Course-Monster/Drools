@@ -29,7 +29,7 @@ public class PolicyServiceImpl implements PolicyService {
                             .paymentStatus(policy.getStatus())
                             .premium(policy.getPremium().intValue())
                             .coverage(policy.getCoverage().intValue())
-                            .reason("N/A")
+                            .reason(policy.getReason())
                             .build()
             );
         });

@@ -31,25 +31,4 @@ public class ApplicationServiceTest extends AbstractServiceTest{
 
     }
 
-    private List<ApplicationDto> getApplications(){
-        return List.of(getApplication("A-100",Boolean.FALSE,Boolean.FALSE,Boolean.FALSE, 26,Status.VALID),
-                getApplication("A-101",Boolean.TRUE,Boolean.FALSE,Boolean.FALSE, 18,Status.VALID),
-                getApplication("A-102",Boolean.TRUE,Boolean.FALSE,Boolean.TRUE, 26,Status.VALID),
-                getApplication("A-103",Boolean.FALSE,Boolean.TRUE,Boolean.FALSE, 26,Status.PENDING));
-    }
-
-    private ApplicationDto getApplication(String applicationNumber, Boolean isEmployed, Boolean isSmoker, Boolean pec, Integer clientAge, Status status){
-        return ApplicationDto.builder()
-                .applicationNumber(applicationNumber)
-                .isEmployed(isEmployed)
-                .isSmoker(isSmoker)
-                .pec(pec)
-                .clientAge(clientAge)
-                .status(status)
-                .build();
-    }
-
-
-
-
 }

@@ -2,7 +2,7 @@ package africa.skunkworks.training.drools.insurance.service.repository.impl;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ClaimDto;
 import africa.skunkworks.training.drools.insurance.repository.ClaimRepository;
-import africa.skunkworks.training.drools.insurance.service.repository.ClaimService;
+import africa.skunkworks.training.drools.insurance.service.repository.ClaimRepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ClaimServiceImpl implements ClaimService {
+public class ClaimRepositoryServiceImpl implements ClaimRepositoryService {
 
     private final ClaimRepository claimRepository;
 
 
     @Autowired
-    public ClaimServiceImpl(ClaimRepository claimRepository) {
+    public ClaimRepositoryServiceImpl(ClaimRepository claimRepository) {
         this.claimRepository = claimRepository;
     }
 
@@ -31,6 +31,8 @@ public class ClaimServiceImpl implements ClaimService {
                             .claimAmount(claim.getClaimAmount().doubleValue())
                             .dateOfClaim(claim.getDateOfClaim())
                             .policyNumber(claim.getPolicy().getPolicyNumber())
+                            .reason(claim.getReason())
+                            .status(claim.getStatus())
                             .build()
             );
         });

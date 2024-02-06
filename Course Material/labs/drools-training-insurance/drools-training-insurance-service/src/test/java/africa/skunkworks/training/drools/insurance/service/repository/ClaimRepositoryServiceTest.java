@@ -4,7 +4,6 @@ import africa.skunkworks.training.drools.insurance.domain.dto.ClaimDto;
 import africa.skunkworks.training.drools.insurance.domain.repository.Claim;
 import africa.skunkworks.training.drools.insurance.repository.ClaimRepository;
 import africa.skunkworks.training.drools.insurance.service.AbstractServiceTest;
-import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -19,13 +18,13 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-public class ClaimServiceTest extends AbstractServiceTest {
+public class ClaimRepositoryServiceTest extends AbstractServiceTest {
 
     @MockBean
     private ClaimRepository claimRepository;
 
     @Autowired
-    private ClaimService claimService;
+    private ClaimRepositoryService claimService;
 
     @Test
     public void listAllClaims(){
