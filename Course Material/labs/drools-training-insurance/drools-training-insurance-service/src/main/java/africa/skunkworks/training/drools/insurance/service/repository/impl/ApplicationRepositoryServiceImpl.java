@@ -38,6 +38,8 @@ public class ApplicationRepositoryServiceImpl implements ApplicationRepositorySe
                       .bmi(Integer.valueOf(application.getBmi()))
                       .pec(application.getPec())
                       .risk(application.getRisk())
+                      .reason(application.getReason())
+                      .status(application.getStatus())
                       .build()
             );
         });
