@@ -21,6 +21,10 @@ public class ApplicationRepositoryTest extends AbstractRepositoryTest{
         assertNotNull(applications);
         assertFalse(applications.isEmpty());
         assertEquals(10,applications.size());
+
+        Application application = applications.get(0);
+        assertNotNull(application);
+        assertEquals("N/A", application.getReason());
     }
 
 }

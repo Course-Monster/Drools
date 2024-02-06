@@ -36,6 +36,9 @@ public class Application implements Serializable {
     @Column(name = "BMI")
     private String bmi;
 
+    @Column(name = "REASON")
+    private String reason;
+
     public Application() {
     }
 
@@ -79,27 +82,11 @@ public class Application implements Serializable {
         this.bmi = bmi;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Application that = (Application) o;
-        return Objects.equals(applicationNumber, that.applicationNumber) && Objects.equals(client, that.client) && Objects.equals(pec, that.pec) && Objects.equals(risk, that.risk) && Objects.equals(bmi, that.bmi);
+    public String getReason() {
+        return reason;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(applicationNumber, client, pec, risk, bmi);
-    }
-
-    @Override
-    public String toString() {
-        return "Application{" +
-                "applicationNumber='" + applicationNumber + '\'' +
-                ", client=" + client +
-                ", pec='" + pec + '\'' +
-                ", risk='" + risk + '\'' +
-                ", bmi='" + bmi + '\'' +
-                '}';
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 }
