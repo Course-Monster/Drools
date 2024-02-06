@@ -33,8 +33,13 @@ public class Policy implements Serializable {
     @Column(name = "COVERAGE")
     private BigDecimal coverage;
 
+    @Column(name = "REASON")
+    private String reason;
+
     @Column(name = "STATUS")
     private String status;
+
+
 
     public Policy() {
     }
@@ -71,6 +76,14 @@ public class Policy implements Serializable {
         this.coverage = coverage;
     }
 
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
     public String getStatus() {
         return status;
     }
@@ -84,12 +97,12 @@ public class Policy implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Policy policy = (Policy) o;
-        return Objects.equals(policyNumber, policy.policyNumber) && Objects.equals(client, policy.client) && Objects.equals(premium, policy.premium) && Objects.equals(coverage, policy.coverage) && Objects.equals(status, policy.status);
+        return Objects.equals(policyNumber, policy.policyNumber) && Objects.equals(client, policy.client) && Objects.equals(premium, policy.premium) && Objects.equals(coverage, policy.coverage) && Objects.equals(reason, policy.reason) && Objects.equals(status, policy.status);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(policyNumber, client, premium, coverage, status);
+        return Objects.hash(policyNumber, client, premium, coverage, reason, status);
     }
 
     @Override
@@ -99,6 +112,7 @@ public class Policy implements Serializable {
                 ", client=" + client +
                 ", premium=" + premium +
                 ", coverage=" + coverage +
+                ", reason='" + reason + '\'' +
                 ", status='" + status + '\'' +
                 '}';
     }
