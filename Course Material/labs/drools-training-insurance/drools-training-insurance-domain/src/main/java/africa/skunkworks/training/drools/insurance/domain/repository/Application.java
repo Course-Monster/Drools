@@ -10,7 +10,6 @@ import jakarta.persistence.Table;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.util.Objects;
 
 @Entity
 @Table(name = "APPLICATION", schema = "DROOLS_TRAINING_INSURANCE")
