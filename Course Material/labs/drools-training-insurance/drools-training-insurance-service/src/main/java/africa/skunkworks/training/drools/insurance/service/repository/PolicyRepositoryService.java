@@ -4,7 +4,7 @@ import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
 
 import java.util.List;
 
-public interface PolicyService {
+public interface PolicyRepositoryService {
 
     List<PolicyDto> listAllPolicies();
 }

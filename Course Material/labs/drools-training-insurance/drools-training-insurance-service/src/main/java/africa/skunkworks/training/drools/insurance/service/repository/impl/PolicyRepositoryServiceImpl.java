@@ -2,18 +2,18 @@ package africa.skunkworks.training.drools.insurance.service.repository.impl;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
 import africa.skunkworks.training.drools.insurance.repository.PolicyRepository;
-import africa.skunkworks.training.drools.insurance.service.repository.PolicyService;
+import africa.skunkworks.training.drools.insurance.service.repository.PolicyRepositoryService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class PolicyServiceImpl implements PolicyService {
+public class PolicyRepositoryServiceImpl implements PolicyRepositoryService {
 
     private final PolicyRepository policyRepository;
 
-    public PolicyServiceImpl(PolicyRepository policyRepository) {
+    public PolicyRepositoryServiceImpl(PolicyRepository policyRepository) {
         this.policyRepository = policyRepository;
     }
 

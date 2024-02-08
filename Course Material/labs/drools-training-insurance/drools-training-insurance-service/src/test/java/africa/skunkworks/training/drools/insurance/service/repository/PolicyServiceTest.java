@@ -24,7 +24,7 @@ public class PolicyServiceTest extends AbstractServiceTest {
     private PolicyRepository policyRepository;
 
     @Autowired
-    private PolicyService policyService;
+    private PolicyRepositoryService policyService;
 
     @Test
     public void listAllPolicies(){
