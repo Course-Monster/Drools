@@ -1,0 +1,25 @@
+package org.sw.lesson04.demo5;
+
+import org.sw.facts.Payout
+import org.sw.facts.Claim
+import org.sw.facts.Status
+
+rule "Report Payouts Issued"
+    dialect "java"
+    activation-group "verdict"
+    salience 20
+    when
+        Payout()
+    then
+        System.out.println("Verdict: Payouts were issued this session");
+end
+
+rule "Report No Payouts"
+    dialect "java"
+    activation-group "verdict"
+    salience 10
+    when
+        Claim( status == Status.DENIED )
+    then
+        System.out.println("Verdict: No Payouts issued this session");
+end

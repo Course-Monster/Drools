@@ -1,0 +1,17 @@
+package org.sw.lesson01.demo1;
+
+import org.sw.facts.Application;
+
+rule "Invalidate application with Pre-existing conditions, underage, or unemployed"
+    when
+        Application( clientAge < 18 || !employed || PEC )
+    then
+        System.out.println("Application Invalid - Client is minor, unemployed, or has PECs");
+end
+
+rule "Valid Application"
+    when
+        Application( clientAge >= 18 && employed && !PEC )
+    then
+        System.out.println("Application Validated");
+end

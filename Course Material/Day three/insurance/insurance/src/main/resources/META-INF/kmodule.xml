@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<kmodule
+        xmlns="http://www.drools.org/xsd/kmodule">
+
+    <kbase packages="org.sw.lesson01.demo1">
+        <ksession name="StatelessApplicationValidationDemo1" type="stateless"/>
+    </kbase>
+    <kbase packages="org.sw.lesson01.demo2" >
+        <ksession name="StatelessApplicationValidationDemo2" type="stateless"/>
+    </kbase>
+    <kbase packages="org.sw.lesson01.demo3" >
+        <ksession name="StatelessApplicationValidationDemo3" type="stateless"/>
+    </kbase>
+    <kbase packages="org.sw.lesson01.demo4" >
+        <ksession name="StatelessApplicationValidationDemo4" type="stateless"/>
+    </kbase>
+    <kbase packages="org.sw.lesson01.demo5" >
+        <ksession name="StatelessApplicationValidationDemo5" type="stateless"/>
+    </kbase>
+
+
+    <kbase packages="org.sw.lesson02.demo1">
+        <ksession name="StatefulApplicationValidationDemo1"/>
+    </kbase>
+    <kbase packages="org.sw.lesson02.demo2">
+        <ksession name="StatefulApplicationValidationDemo2"/>
+    </kbase>
+
+
+    <kbase packages="org.sw.lesson03.demo1">
+        <ksession name="CrossValidationDemo1"/>
+    </kbase>
+    <kbase packages="org.sw.lesson03.demo2">
+        <ksession name="CrossValidationDemo2"/>
+    </kbase>
+    <kbase packages=" org.sw.lesson03.demo3">
+        <ksession name="CrossValidationDemo3"/>
+    </kbase>
+
+    <kbase packages="org.sw.lesson04.demo1">
+        <ksession name="FactInsertionAndExecutionOrderDemo1"/>
+    </kbase>
+    <kbase packages="org.sw.lesson04.demo2">
+        <ksession name="FactInsertionAndExecutionOrderDemo2"/>
+    </kbase>
+    <kbase packages=" org.sw.lesson04.demo3">
+        <ksession name="FactInsertionAndExecutionOrderDemo3"/>
+    </kbase>
+    <kbase packages=" org.sw.lesson04.demo4">
+        <ksession name="FactInsertionAndExecutionOrderDemo4"/>
+    </kbase>
+    <kbase packages=" org.sw.lesson04.demo5">
+        <ksession name="FactInsertionAndExecutionOrderDemo5"/>
+    </kbase>
+    <kbase packages=" org.sw.lesson04.demo6">
+        <ksession name="FactInsertionAndExecutionOrderDemo6"/>
+    </kbase>
+
+    <kbase packages="org.sw.lesson05.demo1">
+        <ksession name="InsertLogicalAndFactObjectsDemo1"/>
+    </kbase>
+    <kbase packages="org.sw.lesson05.demo2">
+        <ksession name="InsertLogicalAndFactObjectsDemo2"/>
+    </kbase>
+    <kbase packages=" org.sw.lesson05.demo3">
+        <ksession name="InsertLogicalAndFactObjectsDemo3"/>
+    </kbase>
+    <kbase packages=" org.sw.lesson05.demo4">
+        <ksession name="InsertLogicalAndFactObjectsDemo4"/>
+    </kbase>
+
+    <kbase packages="org.sw.lesson06.demo1">
+        <ksession name="ObjectGroupValidationDemo1"/>
+    </kbase>
+    <kbase packages="org.sw.lesson06.demo2">
+        <ksession name="ObjectGroupValidationDemo2"/>
+    </kbase>
+    <kbase packages=" org.sw.lesson06.demo3">
+        <ksession name="ObjectGroupValidationDemo3"/>
+    </kbase>
+    <kbase packages=" org.sw.lesson06.demo4">
+        <ksession name="ObjectGroupValidationDemo4"/>
+    </kbase>
+    <kbase packages=" org.sw.lesson06.demo5">
+        <ksession name="ObjectGroupValidationDemo5"/>
+    </kbase>
+
+    <kbase packages=" org.sw.lesson07">
+        <ksession name="SpreadsheetDecisionTables"/>
+    </kbase>
+    <kbase packages=" org.sw.lesson07">
+        <ksession name="SpreadsheetDecisionTablesStateless" type="stateless"/>
+    </kbase>
+
+
+</kmodule>

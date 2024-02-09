@@ -1,0 +1,35 @@
+package org.sw.lesson06.demo3;
+
+import org.sw.facts.FamilyApplication;
+import org.sw.facts.InvalidFamilyApplication
+import org.sw.facts.InvalidClientID;
+import org.sw.facts.ClientID;
+import org.sw.facts.Policy;
+import java.util.Random;
+
+/*rule "Invalidate family applications with single Invalid ID"
+    date-expires "04-May-2010"
+    enabled false
+	dialect "java"
+	when
+		$familyApplication: FamilyApplication( )
+		exists InvalidClientID( $familyApplication.clientIdNumbers.contains(clientID.idNumber) )
+	then
+		System.out.println( "Set " + $familyApplication + " invalid - invalid ID found");
+		insert( new InvalidFamilyApplication($familyApplication) );
+end*/
+
+rule "Invalidate family application with all IDs expired"
+    dialect "java"
+    when
+        $familyApplication: FamilyApplication( $ids : clientIdNumbers )
+        forall (
+            $clientIdNumber : String() from $ids,
+            ClientID( idNumber == $clientIdNumber, isExpired() )
+        )
+    then
+        System.out.println( "Set " + $familyApplication + " invalid as all client IDs are expired");
+        insert( new InvalidFamilyApplication($familyApplication) );
+end
+
+

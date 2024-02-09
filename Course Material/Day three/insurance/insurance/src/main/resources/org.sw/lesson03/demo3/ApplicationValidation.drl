@@ -1,0 +1,55 @@
+package org.sw.lesson03.demo3;
+
+import org.sw.facts.Application;
+import org.sw.facts.Status;
+
+rule "Invalidate application if not employed"
+    dialect "java"
+    when
+        $application: Application( !employed,
+                                   status != Status.DENIED )
+    then
+        System.out.println($application + ": Invalid – Unemployed");
+        modify($application) {
+            setStatus(Status.DENIED),
+            setReason( "Client unemployed")
+        }
+end
+
+rule "Invalidate application from minor"
+    dialect "java"
+    when
+        $application: Application( clientAge < 18,
+                                   status != Status.DENIED )
+
+    then
+        System.out.println($application + ": Invalid – Minor");
+        modify($application) {
+            setStatus(Status.DENIED),
+            setReason( "Client underaged")
+        }
+end
+
+rule "Invalid application – has pre-existing conditions"
+    dialect "java"
+    when
+        $application: Application( PEC,
+                                   status != Status.DENIED )
+    then
+        System.out.println($application + ": Invalid – Client has PEC");
+        modify($application) {
+            setStatus(Status.DENIED),
+            setReason( "Client has PEC")
+        }
+end
+
+rule "Valid Application"
+    dialect "java"
+    when
+        $application: Application( status == Status.PENDING )
+    then
+        System.out.println($application + ": Approval Granted!");
+        modify($application) {
+            setStatus(Status.APPROVED)
+        }
+end

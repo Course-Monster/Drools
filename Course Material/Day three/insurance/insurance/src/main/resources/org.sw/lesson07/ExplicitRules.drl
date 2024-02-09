@@ -1,0 +1,130 @@
+/*
+package org.sw.lesson07;
+
+//generated from Decision Table
+import org.sw.facts.Application;
+import org.sw.facts.Proposal;
+
+global java.util.List proposalsList;
+
+// rule values at B13, header at B8
+rule "Adjust premium for overweight client"
+// 10% increase for overweight BMI
+	salience 100
+	when
+		$application: Application(isOverweight())
+	then
+		System.out.println( "Positive Risk Factor in application "+$application.getApplicationNumber() +". Premium adjustment: "+10);
+		$application.addPremium( 10 );
+end
+
+// rule values at B14, header at B8
+rule "Adjust premium for Obese Class A client"
+// 20% increase for overweight BMI
+	salience 99
+	when
+		$application: Application(isObeseA())
+	then
+		System.out.println( "Positive Risk Factor in application "+$application.getApplicationNumber() +". Premium adjustment: "+20);
+		$application.addPremium( 20 );
+end
+
+// rule values at B15, header at B8
+rule "Adjust premium for Obese Class B client"
+// 30% increase for overweight BMI
+	salience 98
+	when
+		$application: Application(isObeseB())
+	then
+		System.out.println( "Positive Risk Factor in application "+$application.getApplicationNumber() +". Premium adjustment: "+30);
+		$application.addPremium( 30 );
+end
+
+// rule values at B16, header at B8
+rule "Adjust premium for Obese Class C client"
+// 40% increase for overweight BMI
+	salience 97
+	when
+		$application: Application(isObeseC())
+	then
+		System.out.println( "Positive Risk Factor in application "+$application.getApplicationNumber() +". Premium adjustment: "+40);
+		$application.addPremium( 40 );
+end
+
+// rule values at B17, header at B8
+rule "Adjust premium for smokers"
+// 15% increase for overweight BMI
+	salience 96
+	when
+		$application: Application(isSmoker())
+	then
+		System.out.println( "Positive Risk Factor in application "+$application.getApplicationNumber() +". Premium adjustment: "+15);
+		$application.addPremium( 15 );
+end
+
+// rule values at B18, header at B8
+rule "Adjust premium for high-risk client"
+// 30% increase for overweight BMI
+	salience 95
+	when
+		$application: Application(risk == "high")
+	then
+		System.out.println( "Positive Risk Factor in application "+$application.getApplicationNumber() +". Premium adjustment: "+30);
+		$application.addPremium( 30 );
+end
+
+// rule values at B19, header at B8
+rule "Adjust premium for medium-risk client"
+// 15% increase for overweight BMI
+	salience 94
+	when
+		$application: Application(risk == "medium")
+	then
+		System.out.println( "Positive Risk Factor in application "+$application.getApplicationNumber() +". Premium adjustment: "+15);
+		$application.addPremium( 15 );
+end
+
+// rule values at B20, header at B8
+rule "Adjust premium for seniors"
+// 20% increase for overweight BMI
+	salience 93
+	when
+		$application: Application(clientAge >= 70)
+	then
+		System.out.println( "Positive Risk Factor in application "+$application.getApplicationNumber() +". Premium adjustment: "+20);
+		$application.addPremium( 20 );
+end
+
+// rule values at B21, header at B8
+rule "Adjust premium  for clients with PEC"
+// 20% increase for overweight BMI
+	salience 92
+	when
+		$application: Application(PEC)
+	then
+		System.out.println( "Positive Risk Factor in application "+$application.getApplicationNumber() +". Premium adjustment: "+20);
+		$application.addPremium( 20 );
+end
+
+//// rule values at B29, header at B24
+//rule "Issue insurance proposal"
+//// Issues proposal after adjustments
+//	salience 91
+//	when
+//		$application: Application()
+//	then
+//		System.out.println( $application.getApplicationNumber()+" Final Premium Calculation:  " + $application.getPremium());
+//		Proposal proposal = new Proposal( $application.getApplicationNumber(), $application.getPremium());
+//		proposalsList.add(proposal);
+//end
+
+rule "Issue insurance proposal"
+// Issues proposal after adjustments
+	salience 91
+	when
+		$application: Application()
+	then
+		System.out.println( $application.getApplicationNumber()+" Final Premium Calculation:  " + $application.getPremium());
+		insert( new Proposal( $application.getApplicationNumber(), $application.getPremium()));
+end
+*/
