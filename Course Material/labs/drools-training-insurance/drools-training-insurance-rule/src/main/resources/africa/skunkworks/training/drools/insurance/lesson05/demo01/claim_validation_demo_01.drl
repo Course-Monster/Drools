@@ -1,0 +1,67 @@
+package africa.skunkworks.training.drools.insurance.lesson05.demo01;
+
+import africa.skunkworks.training.drools.insurance.domain.dto.ClaimDto;
+import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
+import africa.skunkworks.training.drools.insurance.domain.enums.Status
+import africa.skunkworks.training.drools.insurance.domain.dto.Payout;
+
+dialect  "java"
+
+rule "Valid Claims"
+    agenda-group "valid-claims"
+    when
+        $claim: ClaimDto( status == Status.PENDING )
+    then
+        modify($claim) {
+            setReason($claim + ": not invalidated. Approval Granted"),
+            setStatus(Status.APPROVED)
+        }
+end
+
+rule "Issue Payout"
+    agenda-group "issue-payout"
+    when
+        $claim: ClaimDto(status == Status.APPROVED)
+    then
+        Payout payout = new Payout( $claim.getPolicyNumber(), $claim.getClaimAmount() );
+        insertLogical( payout );
+        modify($claim){
+            setReason("New Payout: " + payout + " Issued")
+        }
+end
+
+rule "Invalidate claim without matching policy"
+    agenda-group "invalid-policy"
+    when
+        $claim: ClaimDto( status != Status.DENIED )
+        not PolicyDto( policyNumber == $claim.getPolicyNumber() )
+    then
+        modify($claim) {
+            setReason($claim + ": failed (no matching policy)"),
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Invalidate claim that exceeds coverage"
+    agenda-group "exceed-coverage"
+    when
+        $claim: ClaimDto( status != Status.DENIED )
+        $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), coverage < $claim.getClaimAmount() )
+    then
+        modify($claim) {
+            setReason($claim + ": failed. Coverage in policy " + $policy + " insufficient."),
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Invalidate claim with unpaid premiums"
+    agenda-group "unpaid-premiums"
+    when
+        $claim: ClaimDto( status != Status.DENIED )
+        $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), paymentStatus == "Unpaid" )
+    then
+        modify($claim) {
+            setReason($claim + ": failed. Unpaid premiums in " + $policy),
+            setStatus(Status.DENIED)
+        }
+end

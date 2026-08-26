@@ -1,0 +1,50 @@
+package africa.skunkworks.training.drools.insurance.lesson03.demo01;
+
+import africa.skunkworks.training.drools.insurance.domain.dto.ClaimDto;
+import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
+import africa.skunkworks.training.drools.insurance.domain.enums.Status;
+
+dialect  "java"
+
+rule "Invalidate claim without matching policy"
+    when
+        $claim: ClaimDto( )
+        not PolicyDto( policyNumber == $claim.getPolicyNumber() )
+    then
+        modify($claim) {
+            setReason($claim + ": failed (no matching policy)"),
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Invalidate claim that exceeds coverage"
+    when
+        $claim: ClaimDto( )
+        $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), coverage < $claim.getClaimAmount() )
+    then
+        modify($claim) {
+            setReason($claim + ": failed. Coverage in policy " + $policy + " insufficient."),
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Invalidate claim with unpaid premiums"
+    when
+        $claim: ClaimDto( )
+        $policy: PolicyDto( policyNumber == $claim.getPolicyNumber(), paymentStatus == "Unpaid" )
+    then
+        modify($claim) {
+            setReason($claim + ": failed. Unpaid premiums in " + $policy),
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Valid Claims"
+    when
+        $claim: ClaimDto( status == Status.PENDING )
+    then
+        modify($claim) {
+            setReason($claim + ": not invalidated. Approval Granted"),
+            setStatus(Status.APPROVED)
+    }
+end

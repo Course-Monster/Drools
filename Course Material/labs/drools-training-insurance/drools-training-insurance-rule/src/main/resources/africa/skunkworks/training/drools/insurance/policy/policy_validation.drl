@@ -1,0 +1,14 @@
+package africa.skunkworks.training.drools.insurance.policy;
+
+import africa.skunkworks.training.drools.insurance.domain.dto.PolicyDto;
+
+dialect  "java"
+
+rule "Invalidate unpaid Policy"
+    when
+        $policy: PolicyDto( paymentStatus == "Unpaid" )
+    then
+        modify($policy){
+            setReason("Policy [" + $policy + "] invalidated due to unpaid premiums")
+        }
+end

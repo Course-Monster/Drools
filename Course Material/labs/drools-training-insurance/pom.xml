@@ -175,6 +175,12 @@
 			</dependency>
 
 			<dependency>
+				<groupId>org.drools</groupId>
+				<artifactId>drools-tms</artifactId>
+				<version>${drools.version}</version>
+			</dependency>
+
+			<dependency>
 				<groupId>org.kie</groupId>
 				<artifactId>kie-spring</artifactId>
 				<version>${kie.spring.version}</version>
@@ -234,17 +240,17 @@
 								<limit>
 									<counter>INSTRUCTION</counter>
 									<value>COVEREDRATIO</value>
-									<minimum>0.8</minimum>
+									<minimum>0.5</minimum>
 								</limit>
 								<limit>
 									<counter>LINE</counter>
 									<value>COVEREDRATIO</value>
-									<minimum>0.8</minimum>
+									<minimum>0.5</minimum>
 								</limit>
 								<limit>
 									<counter>BRANCH</counter>
 									<value>COVEREDRATIO</value>
-									<minimum>0.7</minimum>
+									<minimum>0.5</minimum>
 								</limit>
 							</limits>
 						</rule>

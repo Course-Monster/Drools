@@ -1,0 +1,44 @@
+package africa.skunkworks.training.drools.insurance.lesson03.demo02;
+
+import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
+import africa.skunkworks.training.drools.insurance.domain.dto.ClientIdentificationDto;
+import africa.skunkworks.training.drools.insurance.domain.enums.Status;
+import java.time.LocalDate;
+
+global africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse applicationResponse;
+
+dialect  "java"
+
+rule "Invalidate applications with missing ID"
+    when
+        $application: ApplicationDto( )
+        not ClientIdentificationDto( idNumber == $application.getClientIdentificationNumber() )
+    then
+        applicationResponse.setResponse($application + " Invalid – No matching ID found");
+        modify($application) {
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Invalidate applications with incorrect name"
+    when
+        $application: ApplicationDto( )
+        $clientID: ClientIdentificationDto( idNumber == $application.getClientIdentificationNumber(), name != $application.clientName )
+    then
+        applicationResponse.setResponse($application + " Invalid – Name [" + $application.getClientName() + "] not matching name on ID [" + $clientID.getName() + "]");
+        modify($application) {
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Invalidate applications with Expired ID"
+    when
+        $application: ApplicationDto( )
+        $clientid: ClientIdentificationDto( idNumber == $application.getClientIdentificationNumber(), expiryDate.isBefore(LocalDate.now()))
+    then
+        applicationResponse.setResponse($application + " Invalid – " + $clientid + " ID expired");
+        modify($application) {
+            setStatus(Status.DENIED)
+        }
+end
+

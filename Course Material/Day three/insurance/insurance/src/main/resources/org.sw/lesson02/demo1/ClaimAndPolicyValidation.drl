@@ -1,0 +1,31 @@
+/*
+package org.sw.lesson02.demo1;
+
+import org.sw.facts.Policy;
+import org.sw.facts.Claim;
+import org.sw.facts.Status
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
+rule "Invalidate Policy with unpaid Premium"
+    when
+        $policy: Policy( $paymentStatus: paymentStatus == "Unpaid" )
+    then
+        System.out.println($policy + " Invalid!");
+        modify($policy){
+            setStatus(Status.INVALID)
+        }
+end
+
+rule "Invalidate Old Claims"
+    dialect "java"
+    when
+        $claim : Claim( $dateOfClaim : dateOfClaim, status != Status.DENIED,
+                        ChronoUnit.YEARS.between($dateOfClaim, LocalDate.now()) > 2 )
+    then
+        System.out.println("Claim " + $claim + " invalidated due to being older than 2 years.");
+        modify($claim) {
+            setStatus(Status.DENIED),
+            setReason("Claim is older than 2 years")
+        };
+end*/

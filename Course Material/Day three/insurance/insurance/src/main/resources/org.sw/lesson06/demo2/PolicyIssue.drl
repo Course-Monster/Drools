@@ -1,0 +1,31 @@
+package org.sw.lesson06.demo2;
+
+import org.sw.facts.FamilyApplication;
+import org.sw.facts.InvalidFamilyApplication
+import org.sw.facts.InvalidClientID;
+import org.sw.facts.ClientID;
+import org.sw.facts.Policy;
+import java.util.Random;
+
+rule "Issue New Policy to Valid Application"
+    dialect "java"
+    when
+        $familyApplication: FamilyApplication()
+        not InvalidFamilyApplication(familyApplication.applicationNumber == $familyApplication.applicationNumber)
+        $clientIdNumber: String() from $familyApplication.clientIdNumbers
+        $clientID: ClientID(idNumber == $clientIdNumber, $name: name)
+    then
+        Random random = new Random();
+        int premium = 100 + random.nextInt(201); // Random number between 200 and 300
+        int coverage = premium * 100;
+
+        Policy newPolicy = new Policy();
+        newPolicy.setPolicyNumber($familyApplication.getApplicationNumber());
+        newPolicy.setClientName($name);
+        newPolicy.setPremium(premium);
+        newPolicy.setCoverage(coverage);
+        newPolicy.setPaymentStatus("Unpaid");
+
+        insertLogical(newPolicy);
+        System.out.println("New policy issued: " + newPolicy);
+end

@@ -1,0 +1,14 @@
+package org.sw.lesson05.demo4;
+
+import org.sw.facts.Policy
+import org.sw.facts.InvalidPolicy
+
+rule "Invalidate unpaid Policy"
+    dialect "java"
+    when
+        $policy: Policy( paymentStatus == "Unpaid" )
+        not InvalidPolicy( policy.policyNumber == $policy.policyNumber)
+    then
+        System.out.println("Policy [" + $policy + "] invalidated due to unpaid premiums");
+        insert( new InvalidPolicy($policy) );
+end

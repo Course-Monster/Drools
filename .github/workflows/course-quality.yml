@@ -1,0 +1,59 @@
+name: Drools course quality
+
+on:
+  pull_request:
+    paths:
+      - 'course-site/**'
+      - '.github/workflows/course-quality.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'course-site/**'
+      - '.github/workflows/course-quality.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drools-course-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: course-site
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install
+        run: npm install
+      - name: Record dependency audit
+        run: npm audit --json > npm-audit.json || true
+      - name: Enforce no critical dependency vulnerabilities
+        run: npm audit --audit-level=critical
+      - name: Validate course structure
+        run: npm run validate:content
+      - name: Build Docusaurus
+        run: npm run build
+      - name: Upload dependency evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: drools-course-dependency-evidence
+          path: |
+            course-site/package-lock.json
+            course-site/npm-audit.json
+          if-no-files-found: error
+      - name: Upload production build
+        uses: actions/upload-artifact@v4
+        with:
+          name: drools-course-site
+          path: course-site/build
+          if-no-files-found: error

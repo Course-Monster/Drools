@@ -1,6 +1,7 @@
 package africa.skunkworks.training.drools.insurance.rule.lesson01.impl;
 
 import africa.skunkworks.training.drools.insurance.domain.dto.ApplicationDto;
+import africa.skunkworks.training.drools.insurance.domain.dto.ClientIdentificationDto;
 import africa.skunkworks.training.drools.insurance.domain.response.ApplicationResponse;
 import africa.skunkworks.training.drools.insurance.rule.AbstractValidateApplication;
 import africa.skunkworks.training.drools.insurance.rule.ValidateApplication;
@@ -20,5 +21,10 @@ public class ValidateApplicationLesson01Demo02  extends AbstractValidateApplicat
     @Override
     public ApplicationResponse validateApplication(ApplicationDto applicationDto) {
        return super.validateApplication(applicationDto);
+    }
+
+    @Override
+    public ApplicationResponse validateApplication(ApplicationDto applicationDto, ClientIdentificationDto clientIdentificationDto) {
+        return null;
     }
 }

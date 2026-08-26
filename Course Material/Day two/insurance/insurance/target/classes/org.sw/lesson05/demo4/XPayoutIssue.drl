@@ -1,0 +1,17 @@
+package org.sw.lesson05.demo4;
+
+import org.sw.facts.Payout
+import org.sw.facts.Policy
+import org.sw.facts.Claim
+import org.sw.facts.InvalidClaim;
+
+rule "Issue Payout"
+    dialect "java"
+    when
+        $claim: Claim( )
+        not InvalidClaim( claim.policyNumber == $claim.policyNumber)
+    then
+        Payout payout = new Payout( $claim.getPolicyNumber(), $claim.getClaimAmount() );
+        System.out.println("New Payout: " + payout + " Issued");
+        insertLogical( payout );
+end

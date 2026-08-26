@@ -1,0 +1,52 @@
+package org.sw.lesson03.demo1;
+
+import org.sw.facts.Claim;
+import org.sw.facts.Policy;
+import org.sw.facts.Status;
+
+rule "Invalidate claim without matching policy"
+    dialect "java"
+    when
+        $claim: Claim( )
+        not Policy( policyNumber == $claim.getPolicyNumber() )
+    then
+        System.out.println($claim + ": failed (no matching policy)");
+        modify($claim) {
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Invalidate claim that exceeds coverage"
+    dialect "java"
+    when
+        $claim: Claim( )
+        $policy: Policy( policyNumber == $claim.getPolicyNumber(), coverage < $claim.getClaimAmount() )
+    then
+        System.out.println($claim + ": failed. Coverage in policy " + $policy + " insufficient.");
+        modify($claim) {
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Invalidate claim with unpaid premiums"
+    dialect "java"
+    when
+        $claim: Claim( )
+        $policy: Policy( policyNumber == $claim.getPolicyNumber(), paymentStatus == "Unpaid" )
+    then
+        System.out.println($claim + ": failed. Unpaid premiums in " + $policy);
+        modify($claim) {
+            setStatus(Status.DENIED)
+        }
+end
+
+rule "Valid Claims"
+    dialect "java"
+    when
+        $claim: Claim( status == Status.PENDING )
+    then
+    System.out.println($claim + ": not invalidated. Approval Granted");
+    modify($claim) {
+        setStatus(Status.APPROVED)
+    }
+end

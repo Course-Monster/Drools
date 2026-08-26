@@ -1,0 +1,11 @@
+package org.sw.lesson06.demo4;
+
+import org.sw.facts.Application;
+
+rule "Check for Child Applications"
+	dialect "java"
+	when
+		forall ( Application( clientAge >= 16 ))
+	then
+		System.out.println( "No applications from under 16 year olds" );
+end

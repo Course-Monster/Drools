@@ -1,6 +1,6 @@
 # 📘 Course Outline
 
-![Drools (1)](https://github.com/Course-Monster/Drools/assets/126121348/9354596f-4af0-4183-9039-8bb31a5bae6d)
+![Drools Course](https://github.com/Course-Monster/Drools/assets/126121348/9354596f-4af0-4183-9039-8bb31a5bae6d)
 
 ---
 ## **🌟 Mastering Drools 8: Comprehensive Training Course**
@@ -44,22 +44,22 @@ _"Mastering Drools 8"_ is an intensive 3-day program focused on equipping partic
 
 ### **Day 1: _Foundation of Drools_**
 
-- **Module 1:** Introduction to Drools _(1hr)_
-- **Module 2:** Drools Environment Setup _(2hrs)_
-- **Module 3:** Advanced Drools Project Handling _(3hrs)_
+- **Module 1:** [Introduction to Drools](#module-1-introduction-to-drools) _(1hr)_
+- **Module 2:** [Drools Environment Setup](#module-2-drools-environment-setup) _(2hrs)_
+- **Module 3:** [Advanced Drools Project Handling](#module-3-advanced-drools-project-handling) _(3hrs)_
 
 ### **Day 2: _Advanced Features & Language_**
 
-- **Module 4:** KIE Sessions & Basic Rule Logic & Cross Products _(2hrs)_
-- **Module 5:** Fact Objects, Execution Control, and Truth Maintenance _(2hrs)_
-- **Module 6:** Working with Object Groups _(2hrs)_
+- **Module 4:** [KIE Sessions & Basic Rule Logic & Cross Products](#module-4-kie-sessions-basic-rule-logic-cross-products) _(2hrs)_
+- **Module 5:** [Fact Objects, Execution Control, and Truth Maintenance](#module-5-fact-objects-execution-control-truth-maintenance) _(2hrs)_
+- **Module 6:** [Working with Object Groups](#module-6-working-with-object-groups) _(2hrs)_
 
 ### **Day 3: _AI Integration & Skills Upgrade_**
 
-- **Module 7:** Complex Event Processing  _(1hrs)_
-- **Module 8:** DMN Models and Spreadsheet Decision Tables _(1hr)_
-- **Module 9:** Rule Templates & Dynamic Rule Creation  _(1hrs)_
-- **Module 10:** Capstone Project  _(3hrs)_
+- **Module 7:** [Complex Event Processing](#module-7-complex-event-processing) _(1hrs)_
+- **Module 8:** [DMN Models and Spreadsheet Decision Tables](#module-8-dmn-models-spreadsheet-decision-tables) _(1hr)_
+- **Module 9:** [Rule Templates & Dynamic Rule Creation](#module-9-rule-templates-dynamic-rule-creation) _(1hrs)_
+- **Module 10:** [Capstone Project](#module-10-capstone-project) _(3hrs)_
 
 ---
 ## **🖥️ Delivery Method**
@@ -87,50 +87,15 @@ Welcome to the first module of our journey into Drools and Rule Engines. This mo
 
 **Subtopics:**
 
-1. **Overview**
-- _Objective_: Outline course structure, objectives, and expected outcomes.
-- _Challenge_: Setting clear expectations.
-- _Solution_: Provide a detailed course roadmap.
-
-2. **Defining Rule Engines: Concepts and Functions**
-- _Objective_: Introduction to rule engines, key concepts, and terminology.
-- _Challenge_: Making complex technical jargon accessible.
-- _Solution_: Use analogies and real-life examples.
-
-3. **Historical Context and Evolution of Rule Engines**
-- _Objective_: Explore the history and modern use cases of rule engines.
-- _Challenge_: Connecting historical development to current technologies.
-- _Solution_: Use timeline visuals and case studies.
-
-4. **Introduction to Drools**
-- _Objective_: Understanding Drools and its advantages.
-- _Challenge_: Demonstrating the uniqueness of Drools.
-- _Solution_: Comparison with other rule engines.
-
-5. **AI and Rule Engines: A Symbiotic Relationship**
-- _Objective_: Explore the interaction between AI and rule-based systems.
-- _Challenge_: Making AI concepts accessible.
-- _Solution_: Simple AI use cases integrated with rule engines.
-
-6. **Setting up for Drools Development**
-- _Objective_: Guide through tools and software requirements for Drools.
-- _Challenge_: Managing diverse participant technical environments.
-- _Solution_: Step-by-step guide for different setups.
-
-7. **Real-world Case Studies in Drools**
-- _Objective_: Discuss practical implementations of Drools.
-- _Challenge_: Relating theory to practice.
-- _Solution_: Diverse industry case studies.
-
-8. **Practical Activity: Environment Setup**
-- _Objective_: Hands-on Drools setup.
-- _Challenge_: Technical setup issues.
-- _Solution_: Detailed guide and real-time support.
-
-9. **Assessment: Quiz on Rule Engines and Drools Basics**
-- _Objective_: Evaluate understanding of Drools basics.
-- _Challenge_: Designing an effective assessment.
-- _Solution_: Multiple-choice questions with immediate feedback.
+1. **[Overview](#module-1-introduction-to-drools)**
+2. **[Defining Rule Engines: Concepts and Functions](#module-1-introduction-to-drools)**
+3. **[Historical Context and Evolution of Rule Engines](#module-1-introduction-to-drools)**
+4. **[Introduction to Drools](#module-1-introduction-to-drools)**
+5. **[AI and Rule Engines: A Symbiotic Relationship](#module-1-introduction-to-drools)**
+6. **[Setting up for Drools Development](#module-1-introduction-to-drools)**
+7. **[Real-world Case Studies in Drools](#module-1-introduction-to-drools)**
+8. **[Practical Activity: Environment Setup](#module-1-introduction-to-drools)**
+9. **[Assessment: Quiz on Rule Engines and Drools Basics](#module-1-introduction-to-drools)**
 
 **Additional Instructional Materials:**
 - Slide Decks
@@ -143,8 +108,8 @@ Welcome to the first module of our journey into Drools and Rule Engines. This mo
 - Office Hours
 - Online Resources
 
-
 ---
+
 ### Module 2: Getting Started with Drools
 
 Welcome to Module 2 where we dive into the practical aspects of working with Drools. This module aims to give you hands-on experience and foundational knowledge to start building with Drools.
@@ -162,46 +127,21 @@ This module focuses on setting up your Drools environment, exploring its project
 
 **Subtopics:**
 
-1. **Setting Up Your Drools Environment**
-- _Objective_: Guide through the initial setup of the Drools development environment.
-- _Challenge_: Ensuring a smooth setup process for all participants.
-- _Solution_: Provide a detailed, step-by-step setup guide.
-
-2. **Exploring the Drools Project Structure**
-- _Objective_: Understand the typical structure of a Drools project.
-- _Challenge_: Familiarizing with the Drools project conventions and architecture.
-- _Solution_: Walkthrough of a sample Drools project with explanations of key components.
-
-3. Crafting Your First Rule with Drools
-- _Objective_: Learn to create basic rules in Drools.
-- _Challenge_: Simplifying the concepts of rule writing for beginners.
-- _Solution_: Step-by-step guide to writing and testing a simple rule.
-
-4. Understanding Decision Model and Notation (DMN)
-- _Objective_: Introduce Decision Model and Notation in the context of Drools.
-- _Challenge_: Explaining DMN concepts in an easy-to-understand manner.
-- _Solution_: Use real-world examples to demonstrate how DMN is used in Drools.
-
-5. Practical Exercise: Develop a Traffic Violation Decision Service
-- _Objective_: Apply learned concepts in a real-world simulation.
-- _Challenge_: Integrating various components of Drools to create a functional service.
-- _Solution_: Stepwise development of a traffic violation decision service with guidance.
-
-6. Best Practices and Common Pitfalls in Drools
-- _Objective_: Share best practices and common mistakes in Drools projects.
-- _Challenge_: Highlighting the do's and don'ts in a practical context.
-- _Solution_: Discuss real-world scenarios and case studies.
-
-7. Assessment: Traffic Violation Service Review
-- _Objective_: Evaluate the understanding and application of Drools in developing a service.
-- _Challenge_: Creating an assessment that is comprehensive yet not overwhelming.
-- _Solution_: Review exercise with specific focus areas and feedback session.
+1. **[Setting Up Your Drools Environment](#module-2-drools-environment-setup)**
+2. **[Exploring the Drools Project Structure](#module-2-drools-environment-setup)**
+3. **[Crafting Your First Rule with Drools](#module-2-drools-environment-setup)**
+4. **[Understanding Decision Model and Notation (DMN)](#module-2-drools-environment-setup)**
+5. **[Practical Exercise: Develop a Traffic Violation Decision Service](#module-2-drools-environment-setup)**
+6. **[Best Practices and Common Pitfalls in Drools](#module-2-drools-environment-setup)**
+7. **[Assessment: Traffic Violation Service Review](#module-2-drools-environment-setup)**
 
 **Additional Instructional Materials:**
-Interactive Demos: Demonstrating rule creation and DMN usage.
-Hands-On Lab Workbook: Detailed exercises and solutions.
-Cheat Sheets: Quick references for Drools syntax and commands.
-Discussion Prompts: Encouraging collaborative learning and sharing experiences.
+- Interactive Demos: Demonstrating rule creation and DMN usage.
+- Hands-On Lab Workbook: Detailed exercises and solutions.
+- Cheat Sheets: Quick references for Drools syntax and
+
+ commands.
+- Discussion Prompts: Encouraging collaborative learning and sharing experiences.
 
 **Post-Module Support:**
 
@@ -211,8 +151,8 @@ Community Forum Access: Providing a platform for continuous learning and support
 
 > We hope you find this module engaging and informative. Your journey with Drools is just getting started!
 
-
 ---
+
 ## ⏰ **Day 2: Deep Dive into Drools Features and Language**
 
 #### **Course Overview**
@@ -227,44 +167,16 @@ Gain comprehensive expertise in the Drools Rule Engine, with a specific focus on
 
 **Topics Covered:**
 
-1. **KIE Sessions Setup**
-   - Learn to configure KIE sessions tailored specifically for the Health Insurance case study.
-   - Understand the crucial role of KIE sessions in efficient rule execution.
-
-2. **Advanced Rule Execution Control**
-   - Explore advanced rule execution control mechanisms such as inference, truth maintenance, and agenda groups.
-   - Apply these advanced techniques to manage complex insurance coverage decisions effectively.
-   
-3. **Inference and Truth Maintenance**
-   - Dive deep into the concept of inference in rule engines and how Drools maintains the accuracy of facts.
-   - Examine real-world use cases, like automatically retracting a health insurance offer when an applicant's eligibility changes.
-
-4. **Agenda Groups and Salience**
-   - Define agenda groups and their significance in organizing and prioritizing rules.
-   - Implement salience values to ensure critical rules take precedence in health insurance rule execution.
-
-5. **Complex Event Processing (CEP)**
-   - Understand CEP within Drools and its applications in tracking and analyzing health insurance claims over time.
-   - Explore CEP operators and temporal reasoning in Drools.
-
-6. **Building a CEP Application for Health Insurance**
-   - Develop a CEP application within Drools to monitor and dynamically adjust health insurance claims in real-time.
-   - Step-by-step construction of a CEP rule to detect unusual patterns in claim submissions.
-
-7. **Lab Exercise Series: Health Insurance**
-   - Practical hands-on exercises to reinforce your understanding of the concepts learned.
-   
-8. **Configuring KIE Sessions for Health Insurance**
-   - Set up and utilize KIE sessions specifically tailored to health insurance rules.
-   - Create a dedicated environment for rule execution in the health insurance domain.
-
-9. **Implementing Advanced Rule Controls**
-   - Apply advanced rule execution control techniques, including agenda groups and salience, to effectively manage health insurance rule execution.
-   - Observe the impact of these controls on rule execution order and efficiency.
-
-10. **Building a CEP Application for Health Insurance**
-    - Develop a comprehensive CEP application to monitor, analyze, and adapt health insurance claims in real-time.
-    - Use Drools to detect and respond to emerging claim patterns.
+1. **[KIE Sessions Setup](#module-4-kie-sessions-basic-rule-logic-cross-products)**
+2. **[Advanced Rule Execution Control](#module-4-kie-sessions-basic-rule-logic-cross-products)**
+3. **[Inference and Truth Maintenance](#module-4-kie-sessions-basic-rule-logic-cross-products)**
+4. **[Agenda Groups and Salience](#module-4-kie-sessions-basic-rule-logic-cross-products)**
+5. **[Complex Event Processing (CEP)](#module-4-kie-sessions-basic-rule-logic-cross-products)**
+6. **[Building a CEP Application for Health Insurance](#module-4-kie-sessions-basic-rule-logic-cross-products)**
+7. **[Lab Exercise Series: Health Insurance](#module-4-kie-sessions-basic-rule-logic-cross-products)**
+8. **[Configuring KIE Sessions for Health Insurance](#module-4-kie-sessions-basic-rule-logic-cross-products)**
+9. **[Implementing Advanced Rule Controls](#module-4-kie-sessions-basic-rule-logic-cross-products)**
+10. **[Building a CEP Application for Health Insurance](#module-4-kie-sessions-basic-rule-logic-cross-products)**
 
 By exploring these subtopics, you will gain a deep understanding of how to leverage the Drools Rule Engine's advanced capabilities for rule execution and event processing within the context of health insurance, ultimately enhancing decision-making processes in the industry.
 
@@ -277,26 +189,12 @@ Delve into the syntax and structure of DRL, learning to write effective rules an
 
 **Topics Covered:**
 
-1. **DRL Syntax and Structure**
-   - Explore the foundational syntax and structure of DRL as it applies specifically to health insurance.
-   - Understand the key elements that make up DRL rules, ensuring clarity and correctness.
-
-2. **Writing Effective Rules**
-   - Learn best practices for crafting clear, efficient, and maintainable health insurance rules in DRL.
-   - Discover techniques to enhance the readability and usability of your rulebase.
-
-3. **Rule Units and Queries**
-   - Utilize DRL to segment health insurance rules into manageable units, improving rulebase organization.
-   - Learn how to create and use queries to efficiently retrieve information from the knowledge base.
-
-4. **Lab Exercise Series: Health Insurance**
-   - Practical hands-on exercises to reinforce your understanding of DRL syntax and advanced rule writing within the health insurance domain.
-   
-5. **Syntax Practice with Health Insurance Rules**
-   - Write DRL rules that determine insurance coverage based on applicant details, applying the syntax and structure concepts learned.
-   
-6. **Advanced Rule Writing for Health Insurance**
-   - Explore rule units and queries to create a sophisticated set of rules for various health insurance scenarios, solving complex insurance-related challenges.
+1. **[DRL Syntax and Structure](#module-5-fact-objects-execution-control-truth-maintenance)**
+2. **[Writing Effective Rules](#module-5-fact-objects-execution-control-truth-maintenance)**
+3. **[Rule Units and Queries](#module-5-fact-objects-execution-control-truth-maintenance)**
+4. **[Lab Exercise Series: Health Insurance](#module-5-fact-objects-execution-control-truth-maintenance)**
+5. **[Syntax Practice with Health Insurance Rules](#module-5-fact-objects-execution-control-truth-maintenance)**
+6. **[Advanced Rule Writing for Health Insurance](#module-5-fact-objects-execution-control-truth-maintenance)**
 
 By exploring these subtopics and completing the lab exercises, you will gain proficiency in writing effective DRL rules for health insurance applications, enhancing your ability to model and manage complex insurance scenarios using Drools.
 
@@ -309,27 +207,12 @@ Explore how Decision Model and Notation (DMN) can be used to encapsulate decisio
 
 **Topics Covered:**
 
-1. **DMN Overview**
-   - Introduction to DMN in Drools, emphasizing its application in health insurance decision-making.
-   - Understand the foundational concepts of DMN and its role in simplifying complex decisions.
-
-2. **Building Effective DMN Models**
-   - Learn how to construct DMN models that accurately represent the decision-making process for determining insurance coverage and premiums.
-   - Utilize DMN elements to create clear and transparent decision models.
-
-3. **Advanced DMN Modeling Techniques**
-   - Dive deeper into DMN modeling, exploring advanced techniques for modeling complex health insurance decisions.
-   - Discover strategies for handling intricate decision scenarios effectively.
-
-4. **Lab Exercise Series: Health Insurance**
-   - Practical hands-on exercises to reinforce your understanding of DMN modeling within the health insurance domain.
-   
-5. **DMN Modeling for Insurance Eligibility**
-   - Create DMN models to evaluate eligibility criteria for health insurance, applying the concepts learned in the module.
-   
-6. **Integrating DMN Models with Drools**
-   - Embed and execute DMN models within the Drools environment for the health insurance scenario.
-   - Analyze the effectiveness of DMN in simplifying decision logic and enhancing transparency in health insurance determinations.
+1. **[DMN Overview](#module-6-working-with-object-groups)**
+2. **[Building Effective DMN Models](#module-6-working-with-object-groups)**
+3. **[Advanced DMN Modeling Techniques](#module-6-working-with-object-groups)**
+4. **[Lab Exercise Series: Health Insurance](#module-6-working-with-object-groups)**
+5. **[DMN Modeling for Insurance Eligibility](#module-6-working-with-object-groups)**
+6. **[Integrating DMN Models with Drools](#module-6-working-with-object-groups)**
 
 By exploring these subtopics and completing the lab exercises, you will gain proficiency in using DMN to model and simplify complex decision-making processes in the context of health insurance using Drools.
 
@@ -354,7 +237,9 @@ By the end of Day 2, you'll have a deep understanding of Drools' advanced featur
 Focusing on the enhancement of decision automation with AI, this module uses a loan application processing scenario to illustrate the use of predictive models within Drools.
 
 - **Introduction to Pragmatic AI**: Understanding AI's role in decision-making within business processes.
-- **Basics of Machine Learning in Drools**: How machine learning models can predict outcomes like loan default risk.
+- **Basics
+
+ of Machine Learning in Drools**: How machine learning models can predict outcomes like loan default risk.
 - **Utilizing PMML Models with Drools**: Incorporating Predictive Model Markup Language (PMML) models into Drools for loan approval predictions.
 - **Advanced Integration of ML Models with DMN**: Merging complex ML predictions with decision tables in the loan application process.
 - **Practical Exercise: AI-Enhanced Decision Service**: Construct an AI-enhanced decision service for loan application processing.
@@ -420,22 +305,3 @@ For each case, document your code, note any assumptions or decisions, and reflec
 
 > [!NOTE]
 > This structured approach ties together the advanced features of Drools 8 with practical, real-world applications, ensuring that participants not only learn about the latest developments in rule engines but also apply them to tangible use cases like loan processing and fraud detection. 😄
-
---- 
-
-## 🐙 **GitHub Integration for Course Management**
-
-- **Repository Setup:** Create a GitHub repository for course materials and exercises.
-- **Code Management:** Use branches for different modules and exercises.
-- **Collaboration:** Leverage GitHub Issues and Discussions for Q&A and collaborative learning.
-- **Version Control:** Teach best practices in Git for managing and submitting code.
-
- 🐧 **Continuous Learning Resources**
-
-- Provide links to relevant GitHub repositories (e.g., kiegroup/drools, droolsjbpm-integration) for continuous learning and updates.
-
----
-
-> [!NOTE]
-> This comprehensive course curriculum, combined with a structured lab environment setup guide and a revised pricing strategy, offers participants a rich learning experience in mastering Drools 8. The course is designed to provide a balance of theoretical knowledge and practical skills, making it valuable for professionals in various industries.
-

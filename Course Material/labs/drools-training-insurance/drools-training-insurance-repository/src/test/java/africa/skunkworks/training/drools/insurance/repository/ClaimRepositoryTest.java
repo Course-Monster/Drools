@@ -1,5 +1,6 @@
 package africa.skunkworks.training.drools.insurance.repository;
 
+import africa.skunkworks.training.drools.insurance.domain.enums.Status;
 import africa.skunkworks.training.drools.insurance.domain.repository.Claim;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,11 @@ public class ClaimRepositoryTest extends AbstractRepositoryTest{
         assertNotNull(claims);
         assertFalse(claims.isEmpty());
         assertEquals(5, claims.size());
+
+        Claim claim = claims.get(0);
+        assertNotNull(claim);
+        assertEquals("CLID-100", claim.getClaimId());
+        assertEquals("N/A", claim.getReason());
+        assertEquals(Status.UNKNOWN, claim.getStatus());
     }
 }

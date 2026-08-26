@@ -1,0 +1,14 @@
+package org.sw.lesson06.demo3;
+
+import org.sw.facts.ClientID;
+import org.sw.facts.InvalidClientID;
+
+/*rule "Invalidate Expired ID"
+    date-expires "04-May-2010"
+    enabled false
+    when
+        $clientID: ClientID( isExpired())
+    then
+        System.out.println($clientID + " is expired.");
+        insert( new InvalidClientID($clientID));
+end*/

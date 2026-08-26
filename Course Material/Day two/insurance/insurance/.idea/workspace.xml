@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="437b6e11-c470-4b4a-8ead-2b1c67df9e35" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="drools.rule" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2bUpwacoqwxsTJVvXnDAnct1Ewt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ClaimCrossValidation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CrossValidation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.FactInsertionAndExecutionOrder.executor&quot;: &quot;Run&quot;,
+    &quot;Application.InsertLogicalAndFactObjects.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ObjectGroupValidation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StatefulValidation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StatelessApplicationValidation.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jpfra/IdeaProjects/insurance&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jpfra\IdeaProjects\insurance\src\main\resources\org.sw\lesson06\demo1" />
+      <recent name="C:\Users\jpfra\IdeaProjects\insurance\src\main\resources\org.sw\lesson06\demo2" />
+      <recent name="C:\Users\jpfra\IdeaProjects\insurance\src\main\resources\org.sw\lesson06\demo4" />
+      <recent name="C:\Users\jpfra\IdeaProjects\insurance\src\main\resources\org.sw\lesson06\demo3" />
+      <recent name="C:\Users\jpfra\IdeaProjects\insurance\src\main\resources\org.sw\lesson05\demo4" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jpfra\IdeaProjects\insurance\src\main\resources\org.sw\module04" />
+      <recent name="C:\Users\jpfra\IdeaProjects\insurance\src\main\resources\org.sw\module04\case01" />
+      <recent name="C:\Users\jpfra\IdeaProjects\insurance\src\main\resources\org.sw\module04\section01" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.StatelessApplicationValidation">
+    <configuration name="CrossValidation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.sw.lesson03.CrossValidation" />
+      <module name="insurance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.sw.lesson03.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FactInsertionAndExecutionOrder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.sw.lesson04.FactInsertionAndExecutionOrder" />
+      <module name="insurance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.sw.lesson04.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InsertLogicalAndFactObjects" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.sw.lesson05.InsertLogicalAndFactObjects" />
+      <module name="insurance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.sw.lesson05.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ObjectGroupValidation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.sw.Lesson6.ObjectGroupValidation" />
+      <module name="insurance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.sw.Lesson6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatelessApplicationValidation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.sw.lesson01.StatelessApplicationValidation" />
+      <module name="insurance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.sw.lesson01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StatelessApplicationValidation" />
+        <item itemvalue="Application.FactInsertionAndExecutionOrder" />
+        <item itemvalue="Application.ObjectGroupValidation" />
+        <item itemvalue="Application.InsertLogicalAndFactObjects" />
+        <item itemvalue="Application.CrossValidation" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="437b6e11-c470-4b4a-8ead-2b1c67df9e35" name="Changes" comment="" />
+      <created>1706279752084</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706279752084</updated>
+      <workItem from="1706279753127" duration="3386000" />
+      <workItem from="1706516161330" duration="858000" />
+      <workItem from="1706524683701" duration="1174000" />
+      <workItem from="1706559783946" duration="2921000" />
+      <workItem from="1706598529989" duration="7762000" />
+      <workItem from="1706608598175" duration="55000" />
+      <workItem from="1706608816163" duration="20856000" />
+      <workItem from="1706631556466" duration="8449000" />
+      <workItem from="1706681589833" duration="38863000" />
+      <workItem from="1706731886970" duration="2151000" />
+      <workItem from="1706766797742" duration="33118000" />
+      <workItem from="1706810160852" duration="7577000" />
+      <workItem from="1706856983274" duration="1749000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

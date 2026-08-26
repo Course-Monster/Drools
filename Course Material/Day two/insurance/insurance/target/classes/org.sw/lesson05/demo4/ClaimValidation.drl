@@ -1,0 +1,41 @@
+package org.sw.lesson05.demo4;
+
+import org.sw.facts.Claim;
+import org.sw.facts.Policy;
+import org.sw.facts.Status;
+import org.sw.facts.Payout;
+import org.sw.facts.InvalidClaim;
+import org.sw.facts.ValidClaim;
+import org.sw.facts.InvalidPolicy;
+
+rule "Invalidate claim without matching policy"
+    dialect "java"
+    when
+        $claim: Claim( )
+        not Policy( policyNumber == $claim.getPolicyNumber() )
+        not InvalidClaim( claim.policyNumber == $claim.policyNumber)
+    then
+        System.out.println($claim + ": failed (no matching policy)");
+        insert( new InvalidClaim($claim) );
+end
+
+rule "Invalidate claim that exceeds coverage"
+    dialect "java"
+    when
+        $claim: Claim( )
+        $policy: Policy( policyNumber == $claim.getPolicyNumber(), coverage < $claim.getClaimAmount() )
+    then
+        System.out.println($claim + ": failed. Coverage in policy " + $policy + " insufficient.");
+        insert( new InvalidClaim($claim) );
+end
+
+rule "Invalidate claim with invalid policy"
+    dialect "java"
+    when
+        $invalidPolicy: InvalidPolicy( )
+        $claim: Claim( policyNumber == $invalidPolicy.policy.policyNumber )
+        not InvalidClaim( claim.policyNumber == $claim.policyNumber)
+    then
+        System.out.println($claim + ": failed. " + $invalidPolicy + " Invalid");
+        insert( new InvalidClaim($claim) );
+end

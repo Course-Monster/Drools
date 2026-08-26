@@ -1,0 +1,17 @@
+package org.sw.lesson03.demo1;
+
+import org.sw.facts.Application;
+import org.sw.facts.Policy;
+import org.sw.facts.Status;
+
+rule "Invalidate Application with Existing Policy"
+    dialect "java"
+    when
+        $application: Application( status != Status.DENIED )
+        $policy: Policy( clientName == $application.clientName )
+    then
+        System.out.println($application + " Invalidated");
+        modify($application) {
+            setStatus(Status.DENIED)
+        }
+end

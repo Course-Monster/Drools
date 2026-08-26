@@ -1,5 +1,6 @@
 package africa.skunkworks.training.drools.insurance.repository;
 
+import africa.skunkworks.training.drools.insurance.domain.enums.Status;
 import africa.skunkworks.training.drools.insurance.domain.repository.Application;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,11 @@ public class ApplicationRepositoryTest extends AbstractRepositoryTest{
         assertNotNull(applications);
         assertFalse(applications.isEmpty());
         assertEquals(10,applications.size());
+
+        Application application = applications.get(0);
+        assertNotNull(application);
+        assertEquals("N/A", application.getReason());
+        assertEquals(Status.UNKNOWN,application.getStatus());
     }
 
 }

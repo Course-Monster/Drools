@@ -1,0 +1,48 @@
+package org.sw.lesson05.demo2;
+
+import org.sw.facts.Claim;
+import org.sw.facts.Policy;
+import org.sw.facts.Status;
+import org.sw.facts.Payout;
+import org.sw.facts.InvalidClaim;
+import org.sw.facts.ValidClaim;
+
+rule "Valid Claims"
+    dialect "java"
+    when
+        $claim: Claim( )
+        not (InvalidClaim( claim == $claim) )
+    then
+    System.out.println($claim + ": not invalidated. Approval Granted");
+    insertLogical( new ValidClaim($claim) );
+end
+
+rule "Invalidate claim without matching policy"
+    dialect "java"
+    when
+        $claim: Claim( )
+        not Policy( policyNumber == $claim.getPolicyNumber() )
+    then
+        System.out.println($claim + ": failed (no matching policy)");
+        insert( new InvalidClaim($claim) );
+end
+
+rule "Invalidate claim that exceeds coverage"
+    dialect "java"
+    when
+        $claim: Claim( )
+        $policy: Policy( policyNumber == $claim.getPolicyNumber(), coverage < $claim.getClaimAmount() )
+    then
+        System.out.println($claim + ": failed. Coverage in policy " + $policy + " insufficient.");
+        insert( new InvalidClaim($claim) );
+end
+
+rule "Invalidate claim with unpaid premiums"
+    dialect "java"
+    when
+        $claim: Claim( )
+        $policy: Policy( policyNumber == $claim.getPolicyNumber(), paymentStatus == "Unpaid" )
+    then
+        System.out.println($claim + ": failed. Unpaid premiums in " + $policy);
+        insert( new InvalidClaim($claim) );
+end

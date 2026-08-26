@@ -1,8 +1,11 @@
 package africa.skunkworks.training.drools.insurance.domain.repository;
 
+import africa.skunkworks.training.drools.insurance.domain.enums.Status;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -35,6 +38,14 @@ public class Application implements Serializable {
 
     @Column(name = "BMI")
     private String bmi;
+
+    @Column(name = "REASON")
+    private String reason;
+
+
+    @Column(name = "STATUS")
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     public Application() {
     }
@@ -79,17 +90,33 @@ public class Application implements Serializable {
         this.bmi = bmi;
     }
 
+    public String getReason() {
+        return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Application that = (Application) o;
-        return Objects.equals(applicationNumber, that.applicationNumber) && Objects.equals(client, that.client) && Objects.equals(pec, that.pec) && Objects.equals(risk, that.risk) && Objects.equals(bmi, that.bmi);
+        return Objects.equals(applicationNumber, that.applicationNumber) && Objects.equals(client, that.client) && Objects.equals(pec, that.pec) && Objects.equals(risk, that.risk) && Objects.equals(bmi, that.bmi) && Objects.equals(reason, that.reason) && status == that.status;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(applicationNumber, client, pec, risk, bmi);
+        return Objects.hash(applicationNumber, client, pec, risk, bmi, reason, status);
     }
 
     @Override
@@ -97,9 +124,11 @@ public class Application implements Serializable {
         return "Application{" +
                 "applicationNumber='" + applicationNumber + '\'' +
                 ", client=" + client +
-                ", pec='" + pec + '\'' +
+                ", pec=" + pec +
                 ", risk='" + risk + '\'' +
                 ", bmi='" + bmi + '\'' +
+                ", reason='" + reason + '\'' +
+                ", status=" + status +
                 '}';
     }
 }
