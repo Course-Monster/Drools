@@ -7,7 +7,11 @@ const config = {
   organizationName: 'skunkworks-academy',
   projectName: 'drools',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw'
+    }
+  },
   trailingSlash: false,
   presets: [
     [
