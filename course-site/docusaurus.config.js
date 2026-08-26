@@ -7,7 +7,11 @@ const config = {
   organizationName: 'skunkworks-academy',
   projectName: 'drools',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw'
+    }
+  },
   trailingSlash: false,
   presets: [
     [
@@ -67,7 +71,7 @@ const config = {
       copyright: `Copyright © ${new Date().getFullYear()} Skunkworks Academy. Course source is version controlled.`
     },
     prism: {
-      additionalLanguages: ['java', 'xml', 'bash', 'yaml']
+      additionalLanguages: ['java', 'markup', 'bash', 'yaml']
     },
     colorMode: {
       defaultMode: 'light',
