@@ -1,0 +1,19 @@
+:root {
+  --ifm-color-primary: #155eef;
+  --ifm-color-primary-dark: #0f52da;
+  --ifm-color-primary-darker: #0e4dce;
+  --ifm-color-primary-darkest: #0c3fa9;
+  --ifm-color-primary-light: #2d6ff1;
+  --ifm-color-primary-lighter: #3977f2;
+  --ifm-color-primary-lightest: #6293f5;
+  --ifm-code-font-size: 95%;
+  --course-border: #d0d5dd;
+}
+html[data-theme='dark'] { --ifm-color-primary: #84adff; --course-border: #475467; }
+.theme-doc-markdown h1 { line-height: 1.15; }
+.theme-doc-markdown h2 { margin-top: 2.25rem; }
+.course-meta { border: 1px solid var(--course-border); border-radius: 0.75rem; padding: 1rem; margin: 1rem 0 1.5rem; }
+.checkpoint { border-left: 4px solid var(--ifm-color-primary); padding: .75rem 1rem; background: var(--ifm-background-surface-color); }
+table { display: table; width: 100%; }
+@media (max-width: 700px) { table { display: block; overflow-x: auto; } }
+*:focus-visible { outline: 3px solid var(--ifm-color-primary); outline-offset: 3px; }
